@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+ant:
+  resource: "@AntWebBundle/Resources/config/routing.yml"
+  prefix:   /
+
+agreement:
+  path:  /{id}-{slug}
+  defaults: { _controller: "AntWebBundle:Page:showBlank", id: "4" }
