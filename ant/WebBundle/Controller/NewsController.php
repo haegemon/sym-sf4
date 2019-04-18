@@ -3,23 +3,25 @@
 namespace Ant\WebBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Ant\WebBundle\Entity\News;
+use Symfony\Component\HttpFoundation\Request;
+
 //use Ant\WebBundle\Entity\NewsRepository;
 
 /**
  * News controller.
  *
  */
-class NewsController extends Controller
+class NewsController extends AbstractController
 {
 
     /**
      * Lists all News entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('AntWebBundle:News')->findAll();
@@ -28,7 +30,7 @@ class NewsController extends Controller
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $entities,
-            $this->get('request')->query->get('page', 1)/*page number*/,
+            $request->query->get('page', 1)/*page number*/,
             2/*limit per page*/
         );
 

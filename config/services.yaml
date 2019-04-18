@@ -34,3 +34,64 @@ fos_user:
     from_email:
         address: '%env(resolve:USER_ADDRESS)%'
         sender_name: '%env(resolve:SENDER_NAME)%'
+
+sonata_media:
+    # if you don't use default namespace configuration
+    class:
+        media: Ant\MediaBundle\Entity\Media
+        gallery: Ant\MediaBundle\Entity\Gallery
+        gallery_has_media: Ant\MediaBundle\Entity\GalleryHasMedia
+    default_context: default
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+            formats:
+                small: { width: 200 , quality: 100}
+                big:   { width: 1500 , quality: 100}
+    cdn:
+        server:
+            path:  'http://media.sonata-project.org/'
+
+    filesystem:
+        local:
+            directory:  "%kernel.root_dir%/../public/uploads/media"
+            create:     false
+    providers:
+        image:
+            thumbnail:  sonata.media.thumbnail.liip_imagine
+        vimeo:
+            thumbnail:  sonata.media.thumbnail.liip_imagine
+        youtube:
+            thumbnail:  sonata.media.thumbnail.liip_imagine
+        dailymotion:
+            thumbnail:  sonata.media.thumbnail.liip_imagine
+
+liip_imagine:
+    filter_sets:
+        default_small:
+            quality: 100
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [100, 70], mode: outbound }
+        default_big:
+            quality: 75
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }
+        default_gallery:
+            quality: 75
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }
+        admin:
+            quality: 75
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }
+
+gregwar_captcha: ~

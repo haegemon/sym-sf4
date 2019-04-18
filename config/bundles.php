@@ -31,4 +31,5 @@ return [
     \Ant\MediaBundle\AntMediaBundle::class => ['all' => true],
     \Ant\UserBundle\AntUserBundle::class => ['all' => true],
     \Ant\WebBundle\AntWebBundle::class => ['all' => true],
+    Gregwar\CaptchaBundle\GregwarCaptchaBundle::class => ['all' => true],
 ];

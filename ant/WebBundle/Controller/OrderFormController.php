@@ -2,8 +2,9 @@
 
 namespace Ant\WebBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ant\WebBundle\Entity\OrderForm;
 use Ant\WebBundle\Form\OrderFormType;
 
@@ -11,7 +12,7 @@ use Ant\WebBundle\Form\OrderFormType;
  * OrderForm controller.
  *
  */
-class OrderFormController extends Controller
+class OrderFormController extends AbstractController
 {
 
     /**
@@ -67,12 +68,16 @@ class OrderFormController extends Controller
      */
     private function createCreateForm(OrderForm $entity)
     {
-        $form = $this->createForm(new OrderFormType(), $entity, array(
-            'action' => $this->generateUrl('order_create_front'),
-            'method' => 'POST',
-        ));
+        $form = $this->createForm(
+            OrderFormType::class,
+            $entity,
+            [
+                'action' => $this->generateUrl('order_create_front'),
+                'method' => 'POST',
+            ]
+        );
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
 
 

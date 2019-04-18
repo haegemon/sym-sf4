@@ -9,11 +9,11 @@
 namespace Ant\MediaBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 
-class GalleryController extends Controller
+class GalleryController extends AbstractController
 {
 
     /**
@@ -33,7 +33,7 @@ class GalleryController extends Controller
     /**
      * @return \Symfony\Bundle\FrameworkBundle\Controller\Response
      */
-    public function lastAction($max)
+    public function lastAction($max, Request $request)
     {
 
         $galleries = $this->get('sonata.media.manager.gallery')->findBy(array(
@@ -43,7 +43,7 @@ class GalleryController extends Controller
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $galleries,
-            $this->get('request')->query->get('page', 1)/*page number*/,
+            $request->query->get('page', 1)/*page number*/,
             $max/*limit per page*/
         );
 

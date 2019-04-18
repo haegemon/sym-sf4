@@ -27,6 +27,12 @@ ads:
 order:
   new: Отправьте заявку
   send: Ваше сообщение успешно отправлено!
+  name: Имя
+  surname: Фамилия
+  email: E-mail
+  phone: Телефон
+  text: Сообщение
+  create: Отправить
 news:
   all: Новости
   title: Заголовок
@@ -39,6 +45,9 @@ news:
   created: Время создания
   updated: Последнее обновление
   id: ID
+  list:  Новости
+  read:  Подробнее
+  back:  Назад
 orders:
   all: Заявки
   name: Имя
@@ -86,31 +95,8 @@ menu:
     services: Услуги
     services_1: Услуга №1
     services_2: Услуга №2
-order:
-  new: Отправить заявку
-  name: Имя
-  surname: Фамилия
-  email: E-mail
-  phone: Телефон
-  text: Сообщение
-  create: Отправить
-news:
-  all: Новости
-  list:  Новости
-  read:  Подробнее
-  back:  Назад
-  title: Заголовок
-  description: Вступительный абзац
-  text: Полный текст
-  metaKey: Ключевые слова
-  metaDesc: Описание для поисковых систем
-  file: Изображение
-  created: Создано
-  updated: Обновлено
 user:
   signout: Выйти
 layout:
   login: Вход в панель управления
   forgot: Забыли пароль?
-admin:
-  actions: Действия
