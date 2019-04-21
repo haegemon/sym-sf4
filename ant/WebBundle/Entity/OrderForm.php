@@ -2,9 +2,6 @@
 
 namespace Ant\WebBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-
-
 /**
  * OrderForm
  */
@@ -46,9 +43,13 @@ class OrderForm
 
     /**
      * @var \DateTime
-     * @Gedmo\Timestampable(on="create")
      */
     private $created;
+
+    public function __construct()
+    {
+        $this->created = new \DateTime();
+    }
 
 
     /**

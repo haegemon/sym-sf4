@@ -7,12 +7,12 @@
  */
 
 namespace Ant\AdminBundle\Admin;
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class AdAdmin extends Admin {
+class AdAdmin extends AbstractAdmin {
 
     protected $baseRouteName = 'ads';
     protected $baseRoutePattern = 'ads';

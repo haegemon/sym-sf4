@@ -14,7 +14,6 @@ use Ant\WebBundle\Form\OrderFormType;
  */
 class OrderFormController extends AbstractController
 {
-
     /**
      * Creates a new OrderForm entity.
      *
@@ -29,15 +28,15 @@ class OrderFormController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $message = \Swift_Message::newInstance()
+            $message = (new \Swift_Message())
                 ->setSubject('order')
                 ->setFrom($form->get('email')->getData())
                 ->setBody(
                     $this->renderView(
                         'AntWebBundle:OrderForm:email.txt.twig',
                         array(
-                            'name' => $form->get('name')->getData(),
-                            'text' => $form->get('text')->getData()
+                            'name' => $entity->getName(),
+                            'text' => $entity->getText()
                         )
                     )
                 );
@@ -47,16 +46,12 @@ class OrderFormController extends AbstractController
                 'notice',
                 'Сообщение отправлено!'
             );
-
-//            return $this->redirect($this->generateUrl('order_show', array('id' => $entity->getId())));
         }
 
 
-
-        return $this->render('AntWebBundle:OrderForm:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+        return $this->render('AntWebBundle:OrderForm:new.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
@@ -64,7 +59,7 @@ class OrderFormController extends AbstractController
      *
      * @param OrderForm $entity The entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return \Symfony\Component\Form\FormInterface The form
      */
     private function createCreateForm(OrderForm $entity)
     {
@@ -80,8 +75,6 @@ class OrderFormController extends AbstractController
         $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
 
-
-
         return $form;
     }
 
@@ -92,11 +85,10 @@ class OrderFormController extends AbstractController
     public function newAction()
     {
         $entity = new OrderForm();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm(new OrderForm());
 
         return $this->render('AntWebBundle:OrderForm:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 

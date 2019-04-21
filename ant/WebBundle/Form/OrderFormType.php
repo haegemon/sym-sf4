@@ -20,34 +20,51 @@ class OrderFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name',TextType::class, array (
+            ->add(
+                'name',
+                TextType::class,
+                [
+                    'required' => true,
+                    'attr' => ['class'=>'form-control'],
+                    'label'=>'order.name',
+                    'translation_domain' => 'AntWebBundle'
+                ]
+            )
+            ->add(
+                'surname',
+                TextType::class,
+                [
+                    'required' => true,
+                    'attr' => ['class'=>'form-control'],
+                    'label'=>'order.surname',
+                    'translation_domain' => 'AntWebBundle'
+                ]
+            )
+            ->add('email',EmailType::class, [
                 'required' => true,
-                'attr' => array('class'=>'form-control'),
-                'label'=>'order.name'))
-            ->add('surname',TextType::class, array (
+                'attr' => ['class'=>'form-control'],
+                'label'=>'order.email',
+                'translation_domain' => 'AntWebBundle'])
+            ->add('phone',TextType::class, [
                 'required' => true,
-                'attr' => array('class'=>'form-control'),
-                'label'=>'order.surname'))
-            ->add('email',EmailType::class, array (
+                'attr' => ['class'=>'form-control'],
+                'label'=>'order.phone',
+                'translation_domain' => 'AntWebBundle'])
+            ->add('text',TextareaType::class, [
                 'required' => true,
-                'attr' => array('class'=>'form-control'),
-                'label'=>'order.email'))
-            ->add('phone',TextType::class, array (
-                'required' => true,
-                'attr' => array('class'=>'form-control'),
-                'label'=>'order.phone'))
-            ->add('text',TextareaType::class, array (
-                'required' => true,
-                'attr' => array('class'=>'form-control'),
-                'label'=>'order.text'))
-            ->add('agreement',CheckboxType::class, array (
+                'attr' => ['class'=>'form-control'],
+                'label'=>'order.text',
+                'translation_domain' => 'AntWebBundle'])
+            ->add('agreement',CheckboxType::class, [
                 'required' => true,
                 'value'=>true,
-                'attr' => array(
+                'attr' => [
                     'class'=>'form-control',
                     'checked' => 'checked',
-                    'label'=>'order.agreement')
-            ))
+                    'label'=>'order.agreement'],
+                'translation_domain' => 'AntWebBundle'
+
+            ])
             ->add('captcha', CaptchaType::class);
         ;
     }
