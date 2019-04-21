@@ -11,6 +11,8 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Ant\WebBundle\Entity\Ad;
+use Ant\WebBundle\Entity\AdGroup;
 
 class AdAdmin extends AbstractAdmin {
 
@@ -62,7 +64,7 @@ class AdAdmin extends AbstractAdmin {
     }
 
     protected  function AdQuery ($id) {
-        $em = $this->modelManager->getEntityManager('Ant\WebBundle\Entity\Ad');
+        $em = $this->modelManager->getEntityManager(Ad::class);
 
         $queryBuilder = $em
             ->createQueryBuilder('a')
@@ -75,7 +77,7 @@ class AdAdmin extends AbstractAdmin {
     }
 
     protected function AdGroupQuery ($id) {
-        $em = $this->modelManager->getEntityManager('Ant\WebBundle\Entity\AdGroup');
+        $em = $this->modelManager->getEntityManager(AdGroup::class);
 
         $queryBuilder = $em
             ->createQueryBuilder('a')

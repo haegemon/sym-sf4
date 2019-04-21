@@ -5,8 +5,6 @@ namespace Ant\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
-use Ant\WebBundle\Entity\Ad;
-use Ant\WebBundle\Entity\AdGroup;
 
 
 /**
@@ -26,9 +24,6 @@ class AdController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-//        $entities = $em->getRepository('AntWebBundle:Ad')->findAllActive();
-
 
         $repository = $em
             ->getRepository('AntWebBundle:Ad');
