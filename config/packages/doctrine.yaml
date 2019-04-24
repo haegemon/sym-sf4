@@ -24,12 +24,12 @@ doctrine:
             UserBundle:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/ant/UserBundle/Entity'
+                dir: '%kernel.project_dir%/Ant/UserBundle/Entity'
                 prefix: 'Ant\UserBundle\Entity'
                 alias: UserBundle
             WebBundle:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/ant/WebBundle/Entity'
+                dir: '%kernel.project_dir%/Ant/WebBundle/Entity'
                 prefix: 'Ant\WebBundle\Entity'
                 alias: WebBundle

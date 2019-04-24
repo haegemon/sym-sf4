@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    sonata.admin.security.mask.builder.class: Sonata\AdminBundle\Security\Acl\Permission\MaskBuilder
 
 imports:
     - { resource: '@AntAdminBundle/Resources/config/admin.yml' }
@@ -29,6 +30,19 @@ services:
 #
 #    # add more service definitions when explicit configuration is needed
 #    # please note that last definitions always *replace* previous ones
+
+    sonata.admin.block.admin_head:
+        class: Ant\AdminBundle\Block\AdminHeadBlockService
+        arguments: ["sonata.admin.block.admin_head", '@templating', '@sonata.admin.pool']
+        tags:
+            - { name: sonata.block}
+    form.type.tinymce:
+        class: Ant\AdminBundle\Form\TinymceType
+        tags:
+            - { name: form.type, alias: tinymce }
+
+    security.acl.permission.map:
+        class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
 
 fos_user:
     db_driver: orm
@@ -74,27 +88,23 @@ sonata_media:
         dailymotion:
             thumbnail:  sonata.media.thumbnail.liip_imagine
 
-liip_imagine:
-    filter_sets:
-        default_small:
-            quality: 100
-#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
-            filters:
-                thumbnail: { size: [100, 70], mode: outbound }
-        default_big:
-            quality: 75
-#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
-            filters:
-                thumbnail: { size: [500, 300], mode: outbound }
-        default_gallery:
-            quality: 75
-#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
-            filters:
-                thumbnail: { size: [500, 300], mode: outbound }
-        admin:
-            quality: 75
-#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
-            filters:
-                thumbnail: { size: [500, 300], mode: outbound }
-
 gregwar_captcha: ~
+
+knp_menu:
+    twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
+        template: AntWebBundle::knp_menu.html.twig
+    templating: false # if true, enables the helper for PHP templates
+    default_renderer: twig # The renderer to use, list is also available by default
+
+
+
+knp_paginator:
+    page_range: 10                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: AntWebBundle::paginator_sliding.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template

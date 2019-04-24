@@ -2,3 +2,24 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+    filter_sets:
+        default_small:
+            quality: 100
+            #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [100, 70], mode: outbound }
+        default_big:
+            quality: 75
+            #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }
+        default_gallery:
+            quality: 75
+            #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }
+        admin:
+            quality: 75
+            #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 300], mode: outbound }

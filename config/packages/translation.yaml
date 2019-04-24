@@ -1,6 +1,6 @@
 framework:
     default_locale: 'ru'
     translator:
-        default_path: '%kernel.project_dir%/../ant/WebBundle/Resources/translations'
+        default_path: '%kernel.project_dir%/../Ant/WebBundle/Resources/translations'
         fallbacks:
             - 'ru'

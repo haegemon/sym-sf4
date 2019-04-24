@@ -90,3 +90,6 @@ security:
         # Change these rules to adapt them to your needs
         - { path: ^/admin/, role: ROLE_USER }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+acl:
+    connection: default
