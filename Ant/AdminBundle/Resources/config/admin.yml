@@ -30,6 +30,17 @@ services:
         calls:
             - [ setTranslationDomain, [AntWebBundle]]
 
+    ant.admin.house:
+        class: Ant\AdminBundle\Admin\HouseAdmin
+        arguments:
+            - ~
+            - App\Entity\House
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "content",  label: "house.all", label_catalogue: "AntWebBundle"}
+        calls:
+            - [ setTranslationDomain, [AntWebBundle]]
+
     ant.admin.order_form:
         class: Ant\AdminBundle\Admin\OrderFormAdmin
         arguments:

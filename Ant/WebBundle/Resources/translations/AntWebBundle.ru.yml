@@ -100,3 +100,18 @@ user:
 layout:
   login: Вход в панель управления
   forgot: Забыли пароль?
+house:
+  all: Дома
+  title: Заголовок
+  description: Краткое описание
+  text: Текст новости
+  metaKey: Ключевые слова
+  metaDesc: Описание для поисковых систем
+  file: Изображение
+  path: Имя файла
+  created: Время создания
+  updated: Последнее обновление
+  id: ID
+  list:  Новости
+  read:  Подробнее
+  back:  Назад
