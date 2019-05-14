@@ -14,7 +14,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Ant\WebBundle\Entity\Ad;
 use Ant\WebBundle\Entity\AdGroup;
-use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\MediaBundle\Form\Type\MediaType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

@@ -3,8 +3,10 @@
 namespace Ant\AdminBundle\Admin;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
 use Ant\AdminBundle\Admin\AdAdmin as BaseAdmin;
+use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
+use Sonata\AdminBundle\Form\Type\ModelType;
+
 
 class ThirdAdAdmin extends BaseAdmin
 {
@@ -34,6 +36,6 @@ class ThirdAdAdmin extends BaseAdmin
         );
 
         $formMapper
-            ->add('adGroup', 'sonata_type_model', $adGroupFieldOptions);
+            ->add('adGroup', ModelType::class, $adGroupFieldOptions);
     }
 }

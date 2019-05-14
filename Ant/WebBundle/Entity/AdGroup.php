@@ -58,27 +58,27 @@ class AdGroup
     }
 
 
-//    /**
-//     * Set active
-//     *
-//     * @param boolean $active
-//     *
-//     * @return Ad
-//     */
-//    public function setActive($active)
-//    {
-//        $this->active = $active;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get active
-//     *
-//     * @return boolean
-//     */
-//    public function getActive()
-//    {
-//        return $this->active;
-//    }
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Ad
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
 }

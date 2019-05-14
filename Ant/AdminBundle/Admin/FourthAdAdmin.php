@@ -2,13 +2,13 @@
 
 namespace Ant\AdminBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
 use Ant\AdminBundle\Admin\AdAdmin as BaseAdmin;
+use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
+use Sonata\AdminBundle\Form\Type\ModelType;
 
 class FourthAdAdmin extends BaseAdmin
 {
@@ -52,7 +52,7 @@ class FourthAdAdmin extends BaseAdmin
         );
 
         $formMapper
-            ->add('adGroup', 'sonata_type_model', $adGroupFieldOptions);
+            ->add('adGroup', ModelType::class, $adGroupFieldOptions);
 
     }
 

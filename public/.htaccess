@@ -50,3 +50,5 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+AddHandler application/x-httpd-php71 .php

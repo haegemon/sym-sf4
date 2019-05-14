@@ -17,6 +17,14 @@ ad:
     path:  /
     defaults: { _controller: "AntWebBundle:Ad:index" }
 
+ant_technology:
+    path: /technology
+    defaults: { _controller: "AntWebBundle:Page:showCustomPageTechnology" }
+
+ant_services:
+    path: /services
+    defaults: { _controller: "AntWebBundle:Page:showCustomPageServices" }
+
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
