@@ -36,6 +36,15 @@ class House
      *
      * @Assert\NotBlank()
      *
+     * @ORM\Column(name="url", type="string", length=1024)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -228,4 +237,23 @@ class House
         $this->bathroomCount = $bathroomCount;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     * @return House
+     */
+    public function setUrl(string $url): House
+    {
+        $this->url = $url;
+        return $this;
+    }
+
 }

@@ -9,3 +9,8 @@ ant:
 agreement:
   path:  /{id}-{slug}
   defaults: { _controller: "AntWebBundle:Page:showBlank", id: "4" }
+
+hbdom:
+  prefix:   /
+  resource: App\Controller\HBDOMController
+  type:     annotation
