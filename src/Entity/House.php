@@ -99,7 +99,7 @@ class House
      *
      * @ORM\OneToOne(
      *     targetEntity="Ant\MediaBundle\Entity\Gallery",
-     *     mappedBy="house",
+     *     inversedBy="house",
      *     cascade={"PERSIST", "REMOVE"},
      *     orphanRemoval=true
      * )
@@ -111,7 +111,7 @@ class House
      *
      * @ORM\OneToOne(
      *     targetEntity="Ant\MediaBundle\Entity\Gallery",
-     *     mappedBy="housePlan",
+     *     inversedBy="housePlan",
      *     cascade={"PERSIST", "REMOVE"},
      *     orphanRemoval=true
      * )
