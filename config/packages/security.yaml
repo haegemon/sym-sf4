@@ -32,7 +32,8 @@ security:
             - ROLE_ANT_ADMIN_FOURTH_AD_STAFF
             # USER can only edit existing FifthAd
             - ROLE_ANT_ADMIN_FIFTH_AD_STAFF
-
+            # USER have unlimited access to News
+            - ROLE_ANT_ADMIN_HOUSE_EDITOR
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:

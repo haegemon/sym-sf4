@@ -11,6 +11,7 @@
 
 namespace Ant\MediaBundle\Entity;
 
+use App\Entity\House;
 use Sonata\MediaBundle\Entity\BaseGallery as BaseGallery;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -24,6 +25,20 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Gallery extends BaseGallery
 {
+    /**
+     * @var House
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\House")
+     */
+    private $house;
+
+    /**
+     * @var House
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\House")
+     */
+    private $housePlan;
+
     /**
      * @var integer $id
      */

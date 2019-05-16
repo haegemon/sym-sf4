@@ -9,6 +9,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\MediaBundle\Form\Type\MediaType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -23,36 +25,46 @@ class HouseAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title',TextType::class, array(
-                'label'=>'house.title',
+            ->add('title', TextType::class, array(
+                'label' => 'house.title',
+                'attr' => array('class' => 'form-control')
+
+            ))
+            ->add('url', TextType::class, array(
+                'label' => 'house.url',
+                'attr' => array('class' => 'form-control')
+
+            ))
+            ->add('description',TextareaType::class, array(
+                'label'=>'house.description',
                 'attr' => array('class'=>'form-control')
 
             ))
-//            ->add('description',TextareaType::class, array(
-//                'label'=>'house.description',
-//                'attr' => array('class'=>'form-control')
-//
-//            ))
-//            ->add('text',TextareaType::class, array(// TinymceType
-//                'required' => false,
-//                'label'=>'house.text',
-//            ))
-//            ->add('metaKey',TextType::class, array(
-//                'label'=>'house.metaKey',
-//                'required' => false,
-//                'attr' => array('class'=>'form-control')
-//            ))
-//            ->add('metaDesc',TextareaType::class, array(
-//                'label'=>'house.metaDesc',
-//                'required' => false,
-//                'attr' => array('class'=>'form-control')
-//            ))
-//            ->add('media', MediaType::class, array(
-//                'provider' => 'sonata.media.provider.image',
-//                'context'  => 'default',
-//                'required' => false))
-//
-        ;
+            ->add('size',NumberType::class, array(
+                'label'=>'house.size',
+                'attr' => array('class'=>'form-control')
+
+            ))
+            ->add('price',IntegerType::class, array(
+                'label'=>'house.price',
+                'attr' => array('class'=>'form-control')
+
+            ))
+            ->add('bedroomCount',IntegerType::class, array(
+                'label'=>'house.bedroomCount',
+                'attr' => array('class'=>'form-control')
+
+            ))
+            ->add('floorCount',IntegerType::class, array(
+                'label'=>'house.floorCount',
+                'attr' => array('class'=>'form-control')
+
+            ))
+            ->add('bathroomCount',IntegerType::class, array(
+                'label'=>'house.bathroomCount',
+                'attr' => array('class'=>'form-control')
+
+            ));
     }
 
     /**
@@ -62,28 +74,39 @@ class HouseAdmin extends AbstractAdmin
     {
         $showMapper
             ->add(
-                'title', 'text', array(
-                'label'=>'house.title',
-            ))
+                'title', 'text', [
+                'label' => 'house.title',
+            ])
             ->add(
-                'description', 'text', array(
-                'label'=>'house.description',
-            ))
-//            ->add(
-//                'text', 'text', array(
-//                'required' => false,
-//                'label'=>'house.text'
-//                ))
-//            ->add(
-//                'metaKey', 'text',array(
-//                'label'=>'house.metaKey',
-//            ))
-//            ->add(
-//                'metaDesc', 'text', array(
-//                'label'=>'house.metaDesc',
-//            ))
-//
-           ;
+                'url', 'text', [
+                'label' => 'house.url',
+            ])
+            ->add(
+                'description', 'text', [
+                'label' => 'house.description',
+            ])
+            ->add(
+                'size', 'text', [
+                'label' => 'house.size',
+            ])
+            ->add(
+                'price', 'text', [
+                'label' => 'house.price',
+            ])
+            ->add(
+                'bedroomCount', 'text', [
+                'label' => 'house.bedroomCount',
+            ])
+            ->add(
+                'floorCount', 'text', [
+                'label' => 'house.floorCount',
+            ])
+            ->add(
+                'bathroomCount', 'text', [
+                'label' => 'house.bathroomCount',
+            ])
+
+        ;
     }
 
     /**
@@ -93,7 +116,7 @@ class HouseAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('title', null, array(
-                'label'=>'house.title',
+                'label' => 'house.title',
             ))
 //
 //            ->add('created', 'doctrine_orm_datetime_range', array(
@@ -115,25 +138,25 @@ class HouseAdmin extends AbstractAdmin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('id', null, [
-            'label'=>'house.id',
-        ])->add('title', null, [
-            'label'=>'house.title',
-        ])
-//            ->add('created',null, array(
-//        'label'=>'house.created',
-//    ))
-//            ->add('updated', null, array(
-//                'label'=>'house.updated',
-//            ))
+        $listMapper
+            ->add('title', null, [
+                'label' => 'house.title',
+            ])
+            ->add(
+                'description', null, [
+                'label' => 'house.description',
+            ])
+            ->add(
+                'price', null, [
+                'label' => 'house.price',
+            ])
             ->add('_action', 'actions', array(
-                'label'=>'admin.actions',
+                'label' => 'admin.actions',
                 'actions' => array(
                     'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
                 )
-            ))
-        ;
+            ));
     }
 }

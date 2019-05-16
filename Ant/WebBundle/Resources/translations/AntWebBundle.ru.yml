@@ -105,10 +105,12 @@ house:
   title: Заголовок
   description: Краткое описание
   text: Текст новости
-  metaKey: Ключевые слова
-  metaDesc: Описание для поисковых систем
-  file: Изображение
-  path: Имя файла
+  url: Url
+  size: Метраж
+  price: Цена
+  bedroomCount: Количество спален
+  floorCount: Количество этажей
+  bathroomCount: Количество санузлов
   created: Время создания
   updated: Последнее обновление
   id: ID

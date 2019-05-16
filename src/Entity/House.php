@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Ant\MediaBundle\Entity\Gallery;
 /**
  * Class House
  * @package App\Entity
@@ -93,6 +93,46 @@ class House
      * @ORM\Column(name="bathroom_count", type="integer")
      */
     private $bathroomCount;
+
+    /**
+     * @var Gallery
+     *
+     * @ORM\OneToOne(
+     *     targetEntity="Ant\MediaBundle\Entity\Gallery",
+     *     mappedBy="house",
+     *     cascade={"PERSIST", "REMOVE"},
+     *     orphanRemoval=true
+     * )
+     */
+    private $gallery;
+
+    /**
+     * @var Gallery
+     *
+     * @ORM\OneToOne(
+     *     targetEntity="Ant\MediaBundle\Entity\Gallery",
+     *     mappedBy="housePlan",
+     *     cascade={"PERSIST", "REMOVE"},
+     *     orphanRemoval=true
+     * )
+     */
+    private $planGallery;
+
+    /**
+     * House constructor.
+     */
+    public function __construct()
+    {
+        $this->title = '';
+        $this->url = '';
+        $this->description = '';
+        $this->size = 0;
+        $this->price = 0;
+        $this->bedroomCount = 0;
+        $this->floorCount = 0;
+        $this->bathroomCount = 0;
+    }
+
 
     /**
      * @return int
