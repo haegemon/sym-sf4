@@ -54,9 +54,6 @@ class NewsAdmin extends AbstractAdmin
                 'required' => false))
 
         ;
-
-
-        ;
     }
 
     /**

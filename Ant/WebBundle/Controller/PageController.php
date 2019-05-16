@@ -52,4 +52,15 @@ class PageController extends Controller
             'entity'      => $entity,
         ));
     }
+
+    public function showCustomPageTechnologyAction()
+    {
+        return $this->render('AntWebBundle:CustomPages:technology.html.twig'
+        );
+    }
+    public function showCustomPageServicesAction()
+    {
+        return $this->render('AntWebBundle:CustomPages:services.html.twig'
+        );
+    }
 }

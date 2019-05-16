@@ -24,9 +24,17 @@ services:
 
     ant.admin.news:
         class: Ant\AdminBundle\Admin\NewsAdmin
-        arguments: [~, Ant\WebBundle\Entity\News, SonataAdminBundle:CRUD]
+        arguments: [~,  App\Entity\House, ~]
         tags:
             - {name: sonata.admin, manager_type: orm, group: "content",  label: "news.all", label_catalogue: "AntWebBundle"}
+        calls:
+            - [ setTranslationDomain, [AntWebBundle]]
+
+    ant.admin.house:
+        class: Ant\AdminBundle\Admin\HouseAdmin
+        arguments: [~, Ant\WebBundle\Entity\News, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "content",  label: "house.all", label_catalogue: "AntWebBundle"}
         calls:
             - [ setTranslationDomain, [AntWebBundle]]
 

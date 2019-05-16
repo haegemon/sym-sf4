@@ -14,7 +14,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class AdGroupAdmin extends AbstractAdmin {
 
@@ -28,7 +28,8 @@ class AdGroupAdmin extends AbstractAdmin {
                 'label'=>'adGroup.title',
                 'attr' => array('class'=>'form-control')
             ))
-            ->add('active', null, array('required' => false,
+            ->add('active', CheckboxType::class, array(
+		'required' => false,
                 'label'=>'ad.active'
             ))
         ;
