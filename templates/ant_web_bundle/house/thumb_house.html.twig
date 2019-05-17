@@ -1,0 +1,26 @@
+<div class="js-slide mt-1">
+    <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+        <div class="card-body bg-primary rounded-top p-5">
+            <div class="u-avatar bg-white rounded p-2 mx-auto">
+                <img class="img-fluid" src="{{ asset('assets/img/160x160/img12.png') }}" alt="Image Description">
+            </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="mb-3">
+                <h2 class="h6 mb-0">{{ house.title }}</h2>
+                <small class="d-block text-secondary">{{ house.size }} м2</small>
+            </div>
+            <div class="mb-3">
+                <ul class="list-inline">
+                    <li class="list-inline-item">{{ house.bedroomCount }} <span class="fas fa-bed "></span></li>
+                    <li class="list-inline-item">{{ house.floorCount }} <span class="fas fa-warehouse"></span></li>
+                    <li class="list-inline-item">{{ house.bathroomCount }} <span class="fas fa-restroom"></span></li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <h2 class="h6 mb-0">{{ (house.price)| number_format(0,',',' ') }} р.</h2>
+            </div>
+            <a class="btn btn-sm btn-block btn-primary" href="{{ path('house_page', {'url':house.url}) }}">Buy</a>
+        </div>
+    </article>
+</div>

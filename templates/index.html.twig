@@ -4,17 +4,19 @@
     {{ dump(houses) }}
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" role="main">
-        <!-- Hero Section -->
-        <div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden">
+
+
+                <!-- Hero Section -->
+        <div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden" style="background-image: url(../../assets/img/1920x1080/img51.jpg);">
             <div class="container space-top-2 space-top-md-5 space-top-lg-4">
                 <!-- Title -->
-                <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-                    <h1 class="display-4 font-size-md-down-5 text-white">Front <strong class="font-weight-semi-bold">business</strong></h1>
-                    <p class="lead text-white-70">Install Front on your own infrastructure</p>
+                <div class="w-md-100 w-lg-100 text-center mx-md-auto mb-9">
+                    <h1 class="display-4 font-size-md-down-5">Быстро и качественно <strong class="font-weight-semi-bold">строим надёжные дома для Вашего проживания</strong></h1>
+                    <p class="lead">Каркасные дома по канадской технологии</p>
                 </div>
                 <!-- End Title -->
 
-                <!-- Slick Carousel -->
+                <!-- Houses Carousel -->
                 <div class="js-slick-carousel u-slick u-slick--gutters-3 z-index-2"
                      data-slides-show="5"
                      data-slides-scroll="1"
@@ -41,27 +43,11 @@
                }
              }]'>
                     {% for house in houses %}
-                        <div class="js-slide mt-1">
-                            <article class="card border-0 shadow-sm transition-3d-hover mb-3">
-                                <div class="card-body bg-primary rounded-top p-5">
-                                    <div class="u-avatar bg-white rounded p-2 mx-auto">
-                                        <img class="img-fluid" src="{{ asset('assets/img/160x160/img12.png') }}" alt="Image Description">
-                                    </div>
-                                </div>
-                                <div class="card-body p-4">
-                                    <div class="mb-3">
-                                        <h2 class="h6 mb-0">{{ house.title }}</h2>
-                                        <small class="d-block text-secondary">{{ house.description }}</small>
-                                    </div>
-                                    <a class="btn btn-sm btn-block btn-primary" href="{{ path('house_page', {'url':house.url}) }}">Buy</a>
-                                </div>
-                            </article>
-                        </div>
+                        {% include 'ant_web_bundle/house/thumb_house.html.twig' %}
                     {% endfor %}
                 </div>
                 <!-- End Slick Carousel -->
             </div>
-
             <!-- SVG Bottom Shape -->
             <figure class="position-absolute right-0 bottom-0 left-0">
                 <img class="js-svg-injector" src="{{ asset('assets/svg/components/irregular-shape-1-bottom.svg') }}" alt="Image Description"
@@ -69,342 +55,16 @@
             </figure>
             <!-- End SVG Bottom Shape -->
 
-            <!-- SVG Background Element -->
-            <figure class="position-absolute top-0 right-0 left-0 z-index-n1">
-                <img class="js-svg-injector" src="{{ asset('assets/svg/components/bg-elements-9.svg') }}" alt="Image Description"
-                     data-parent="#SVGheroBottomShape">
-            </figure>
-            <!-- End SVG Background Element -->
         </div>
         <!-- End Hero Section -->
+        {% include 'ant_web_bundle/house/index_benefits.html.twig' %}
+        {% include 'ant_web_bundle/house/index_testimonials.html.twig' %}
 
-        <!-- Pricing Section -->
-        <div class="container position-relative z-index-2 space-2 space-md-3">
-            <!-- Title -->
-            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-                <h2 class="text-primary">Front <strong class="font-weight-semi-bold">pricing</strong></h2>
-                <p class="mb-0">Choose the most suitable service for your needs with reasonable price.</p>
-            </div>
-            <!-- End Title -->
-
-            <div class="w-lg-65 mx-lg-auto">
-                <div class="card-deck d-block d-md-flex card-md-gutters-3 mb-5">
-                    <!-- Pricing -->
-                    <div class="card text-center mb-5 mb-md-0">
-                        <!-- Header -->
-                        <header class="card-header p-5">
-                            <h4 class="h5 text-success">14-Day free trial</h4>
-                            <div>
-                <span class="h1 text-dark font-weight-medium">
-                  <span class="align-top font-size-2">$</span>0
-                </span>
-                                <span class="text-secondary">month</span>
-                            </div>
-                        </header>
-                        <!-- End Header -->
-
-                        <!-- Content -->
-                        <div class="card-body p-5">
-                            <!-- SVG Icon -->
-                            <figure id="SVGfreeTrial" class="svg-preloader w-80 mx-auto mb-5">
-                                <img class="js-svg-injector" src="{{ asset('assets/svg/flat-icons/free-trial.svg') }}" alt="Image Description"
-                                     data-parent="#SVGfreeTrial">
-                            </figure>
-                            <!-- End SVG Icon -->
-
-                            <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover">Start 14-Day Free Trial</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
-
-                    <!-- Pricing -->
-                    <div class="card card-frame-highlighted text-center">
-                        <!-- Header -->
-                        <header class="card-header p-5">
-                            <h4 class="h5 text-primary">Enterprise</h4>
-                            <div>
-                <span class="h1 text-dark font-weight-medium">
-                  <span class="align-top font-size-2">$</span>44
-                </span>
-                                <span class="text-secondary">month</span>
-                            </div>
-                        </header>
-                        <!-- End Header -->
-
-                        <!-- Content -->
-                        <div class="card-body p-5">
-                            <!-- SVG Icon -->
-                            <figure id="SVGenterprise" class="svg-preloader w-80 mx-auto mb-5">
-                                <img class="js-svg-injector" src="{{ asset('assets/svg/flat-icons/enterprise-1.svg') }}" alt="Image Description"
-                                     data-parent="#SVGenterprise">
-                            </figure>
-                            <!-- End SVG Icon -->
-
-                            <button type="button" class="btn btn-sm btn-block btn-primary transition-3d-hover">Start Enterprise</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
-                </div>
-            </div>
-
-            <!-- Link -->
-            <div class="text-center">
-                <p class="small">
-                    <a class="link-muted" href="#">Terms and Conditions</a>
-                    apply.
-                </p>
-            </div>
-            <!-- End Link -->
-        </div>
-        <!-- End Pricing Section -->
-
-        <!-- Features Section -->
-        <div class="container space-bottom-md-3">
-            <!-- Divider -->
-            <div class="w-65 w-lg-50 mx-auto">
-                <hr class="my-0">
-            </div>
-            <!-- End Divider -->
-
-            <div class="row space-top-3">
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon2" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-2.svg') }}" alt="SVG"
-                                 data-parent="#icon2">
-                        </figure>
-                        <p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is a key point.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon1" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-1.svg') }}" alt="SVG"
-                                 data-parent="#icon1">
-                        </figure>
-                        <p>Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon3" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-3.svg') }}" alt="SVG"
-                                 data-parent="#icon3">
-                        </figure>
-                        <p>The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon4" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-4.svg') }}" alt="SVG"
-                                 data-parent="#icon4">
-                        </figure>
-                        <p>Whether through commerce or just an experience to tell your brand's story, the time has come to start using development languages that fit your projects needs.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon5" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-5.svg') }}" alt="SVG"
-                                 data-parent="#icon5">
-                        </figure>
-                        <p>Now that your brand is all dressed up and ready to party, it's time to release it to the world. By the way, let's celebrate already.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon6" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-6.svg') }}" alt="SVG"
-                                 data-parent="#icon6">
-                        </figure>
-                        <p>We get it, you're busy and it is important that someone keep up with marketing and driving people to your brand. We've got you covered.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon7" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-7.svg') }}" alt="SVG"
-                                 data-parent="#icon7">
-                        </figure>
-                        <p>It's important to stay detail oriented with every project we tackle. Staying focused allows us to turn every project we complete into something we love.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon8" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-8.svg') }}" alt="SVG"
-                                 data-parent="#icon8">
-                        </figure>
-                        <p>We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9 mb-lg-0">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon9" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-9.svg') }}" alt="SVG"
-                                 data-parent="#icon9">
-                        </figure>
-                        <p>As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <div class="w-65 w-lg-50 mx-auto">
-                <hr class="mt-0 mb-9">
-            </div>
-            <!-- End Divider -->
-
-            <div class="text-center">
-                <a href="#" class="btn btn-primary transition-3d-hover">See all Features</a>
-            </div>
-        </div>
-        <!-- End Features Section -->
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
 
     <!-- ========== FOOTER ========== -->
-    <footer id="SVGfooterTopShape" class="svg-preloader position-relative gradient-half-primary-v5">
-        <div class="container space-top-4 space-bottom-2">
-            <!-- Title -->
-            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5">
-                <h2 class="text-white">Ready to <strong class="font-weight-semi-bold">get started?</strong></h2>
-                <p class="text-white-70 mb-0">Want to see Front in action? Get started with Front for instant experience:</p>
-            </div>
-            <!-- End Title -->
-
-            <!-- Form -->
-            <form class="js-validate w-lg-80 mx-lg-auto">
-                <div class="row mx-gutters-2">
-                    <div class="col-6 col-sm mb-2">
-                        <div class="js-form-message">
-                            <label class="sr-only" for="signupSrName">Name</label>
-                            <div class="input-group input-group-borderless">
-                                <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
-                                       data-msg="Name must contain only letters.">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm mb-2">
-                        <div class="js-form-message">
-                            <label class="sr-only" for="signupSrEmail">Email</label>
-                            <div class="input-group input-group-borderless">
-                                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
-                                       data-msg="Please enter a valid email address.">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm mb-2">
-                        <button type="submit" class="btn btn-block btn-success transition-3d-hover">Get Started</button>
-                    </div>
-                </div>
-            </form>
-            <!-- End Form -->
-
-            <hr class="opacity-md my-7">
-
-            <div class="row align-items-lg-center">
-                <div class="col-lg-3 mb-4 mb-lg-0">
-                    <!-- Copyright -->
-                    <p class="small text-white-70 mb-0">&copy; Front. 2019 Htmlstream.</p>
-                    <!-- End Copyright -->
-                </div>
-
-                <div class="col-md-8 col-lg-6 mb-4 mb-md-0">
-                    <!-- List -->
-                    <ul class="list-inline list-group-transparent list-group-white list-group-flush list-group-borderless text-lg-center mb-0">
-                        <li class="list-inline-item px-2">
-                            <a class="list-group-item-action" href="../pages/about-agency.html">About</a>
-                        </li>
-                        <li class="list-inline-item px-2">
-                            <a class="list-group-item-action" href="../pages/services-agency.html">Services</a>
-                        </li>
-                        <li class="list-inline-item px-2">
-                            <a class="list-group-item-action" href="../pages/careers.html">Careers</a>
-                        </li>
-                        <li class="list-inline-item px-2">
-                            <a class="list-group-item-action" href="../blog/classic-right-sidebar.html">Blog</a>
-                        </li>
-                    </ul>
-                    <!-- End List -->
-                </div>
-
-                <div class="col-md-4 col-lg-3">
-                    <!-- Social Networks -->
-                    <ul class="list-inline text-md-right mb-0">
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                                <span class="fab fa-facebook-f btn-icon__inner"></span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                                <span class="fab fa-google btn-icon__inner"></span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                                <span class="fab fa-twitter btn-icon__inner"></span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                                <span class="fab fa-github btn-icon__inner"></span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- End Social Networks -->
-                </div>
-            </div>
-        </div>
-
-        <!-- SVG Wave Shape -->
-        <figure class="position-absolute top-0 right-0 left-0">
-            <img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-1-top-sm.svg') }}" alt="Image Description"
-                 data-parent="#SVGfooterTopShape">
-        </figure>
-        <!-- End SVG Wave Shape -->
-    </footer>
+    {% include 'footer.html.twig' %}
     <!-- ========== END FOOTER ========== -->
 
     <!-- Go to Top -->
