@@ -13,7 +13,10 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\Type\CollectionType;
+use Sonata\CoreBundle\Form\Type\TranslatableChoiceType;
 use Sonata\MediaBundle\Provider\Pool;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
 class GalleryAdmin extends AbstractAdmin
@@ -55,7 +58,7 @@ class GalleryAdmin extends AbstractAdmin
         }
 
         $formMapper
-            ->add('context', 'sonata_type_translatable_choice', array(
+            ->add('context', TranslatableChoiceType::class, array(
                 'choices' => $contexts,
                 'catalogue' => 'SonataMediaBundle'
             ))
@@ -63,10 +66,8 @@ class GalleryAdmin extends AbstractAdmin
             ->add('name')
             ->add('description',null, array('required' => false))
             ->add('link', null, array('required' => false))
-            ->add('defaultFormat', 'choice', array('choices' => $formats))
-            ->add('galleryHasMedias', 'sonata_type_collection', array(
-                    'cascade_validation' => true,
-                ), array(
+            ->add('defaultFormat', ChoiceType::class, array('choices' => $formats))
+            ->add('galleryHasMedias', CollectionType::class, [], array(
                     'edit'              => 'inline',
                     'inline'            => 'table',
                     'sortable'          => 'position',

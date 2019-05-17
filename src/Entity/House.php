@@ -99,7 +99,6 @@ class House
      *
      * @ORM\OneToOne(
      *     targetEntity="Ant\MediaBundle\Entity\Gallery",
-     *     inversedBy="house",
      *     cascade={"PERSIST", "REMOVE"},
      *     orphanRemoval=true
      * )
@@ -111,7 +110,6 @@ class House
      *
      * @ORM\OneToOne(
      *     targetEntity="Ant\MediaBundle\Entity\Gallery",
-     *     inversedBy="housePlan",
      *     cascade={"PERSIST", "REMOVE"},
      *     orphanRemoval=true
      * )
@@ -296,4 +294,39 @@ class House
         return $this;
     }
 
+    /**
+     * @return Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
+    }
+
+    /**
+     * @param Gallery $gallery
+     * @return House
+     */
+    public function setGallery(Gallery $gallery): House
+    {
+        $this->gallery = $gallery;
+        return $this;
+    }
+
+    /**
+     * @return Gallery
+     */
+    public function getPlanGallery()
+    {
+        return $this->planGallery;
+    }
+
+    /**
+     * @param Gallery $planGallery
+     * @return House
+     */
+    public function setPlanGallery(Gallery $planGallery): House
+    {
+        $this->planGallery = $planGallery;
+        return $this;
+    }
 }

@@ -3,12 +3,15 @@
 namespace Ant\AdminBundle\Admin;
 
 use Ant\AdminBundle\Form\TinymceType;
+use Ant\MediaBundle\Entity\Gallery;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\MediaBundle\Form\Type\ApiGalleryType;
 use Sonata\MediaBundle\Form\Type\MediaType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -64,7 +67,25 @@ class HouseAdmin extends AbstractAdmin
                 'label'=>'house.bathroomCount',
                 'attr' => array('class'=>'form-control')
 
-            ));
+            ))
+            ->add('gallery', EntityType::class, [
+                    'required' => false,
+                    'class'=> Gallery::class,
+                    'choice_label' => 'name',
+                ]
+            )
+            ->add('planGallery', EntityType::class, [
+                    'required' => false,
+                    'class'=> Gallery::class,
+                    'choice_label' => 'name',
+                ]
+            )
+//            ->add('context', 'sonata_type_translatable_choice', array(
+//                'choices' => $contexts,
+//                'catalogue' => 'SonataMediaBundle'
+//            ))
+
+        ;
     }
 
     /**
