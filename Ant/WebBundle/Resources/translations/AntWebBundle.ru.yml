@@ -111,6 +111,7 @@ house:
   bedroomCount: Количество спален
   floorCount: Количество этажей
   bathroomCount: Количество санузлов
+  mainPhoto: Главное фото
   created: Время создания
   updated: Последнее обновление
   id: ID

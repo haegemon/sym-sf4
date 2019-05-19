@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Ant\MediaBundle\Entity\Media;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Ant\MediaBundle\Entity\Gallery;
 /**
@@ -115,6 +117,15 @@ class House
      * )
      */
     private $planGallery;
+
+    /**
+     * @var Media
+     *
+     * @ORM\ManyToOne(
+     *     targetEntity="Ant\MediaBundle\Entity\Media"
+     * )
+     */
+    private $mainPhoto;
 
     /**
      * House constructor.
@@ -327,6 +338,24 @@ class House
     public function setPlanGallery(Gallery $planGallery): House
     {
         $this->planGallery = $planGallery;
+        return $this;
+    }
+
+    /**
+     * @return Media|null
+     */
+    public function getMainPhoto(): ?Media
+    {
+        return $this->mainPhoto;
+    }
+
+    /**
+     * @param Media $mainPhoto
+     * @return House
+     */
+    public function setMainPhoto(Media $mainPhoto): House
+    {
+        $this->mainPhoto = $mainPhoto;
         return $this;
     }
 }

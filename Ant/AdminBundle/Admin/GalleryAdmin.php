@@ -9,13 +9,18 @@
 namespace Ant\AdminBundle\Admin;
 
 
+use Ant\MediaBundle\Entity\GalleryHasMedia;
+use Ant\MediaBundle\Entity\Media;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\Type\CollectionType;
 use Sonata\CoreBundle\Form\Type\TranslatableChoiceType;
+use Sonata\MediaBundle\Form\Type\ApiGalleryHasMediaType;
+use Sonata\MediaBundle\Model\GalleryHasMediaInterface;
 use Sonata\MediaBundle\Provider\Pool;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
@@ -67,13 +72,20 @@ class GalleryAdmin extends AbstractAdmin
             ->add('description',null, array('required' => false))
             ->add('link', null, array('required' => false))
             ->add('defaultFormat', ChoiceType::class, array('choices' => $formats))
-            ->add('galleryHasMedias', CollectionType::class, [], array(
+            ->add('galleryHasMedias', \Sonata\CoreBundle\Form\Type\CollectionType::class, array(
+//                'cascade_validation' => true,
+//                'by_reference' => false
+            ), [
                     'edit'              => 'inline',
                     'inline'            => 'table',
                     'sortable'          => 'position',
-                    'link_parameters'   => array('context' => $context),
-                    'admin_code'        => 'sonata.media.admin.gallery_has_media'
-                )
+                    'link_parameters'   => [
+                        'context' => $context,
+                        'provider' => 'sonata.media.provider.image',
+                    ],
+                    'admin_code'        => 'sonata.media.admin.gallery_has_media',
+
+                ]
             )
         ;
     }

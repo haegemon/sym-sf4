@@ -4,3 +4,8 @@ twig:
     strict_variables: '%kernel.debug%'
 #    paths:
 #        - '%kernel.project_dir%/../Ant/AdminBundle/Resources/views': ~
+
+    form_themes:
+            # other files
+            - 'AntMediaBundle:Form:media_widgets.html.twig'
+            - 'AntAdminBundle:Form:tinymce.html.twig'

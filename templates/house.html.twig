@@ -2,6 +2,17 @@
 
 {% block body %}
     {{ dump(house) }}
-
-    GIT
+    <div>
+        Show galleries
+    </div>
+    {% for media in house.planGallery.galleryHasMedias %}
+        <div>
+            <img class="img-fluid" src="{% path media.media, 'small' %}">
+        </div>
+    {% endfor %}
+    {% for media in house.gallery.galleryHasMedias %}
+        <div>
+            <img class="img-fluid" src="{% path media.media, 'small' %}">
+        </div>
+    {% endfor %}
 {% endblock %}

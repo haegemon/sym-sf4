@@ -1,5 +1,6 @@
 parameters:
     sonata.media.admin.gallery.class: Ant\AdminBundle\Admin\GalleryAdmin
+    sonata.media.admin.gallery_has_media.class: Ant\AdminBundle\Admin\GalleryHasMediasAdmin
 services:
     sonata.admin.ads:
         class: Ant\AdminBundle\Admin\AdAdmin

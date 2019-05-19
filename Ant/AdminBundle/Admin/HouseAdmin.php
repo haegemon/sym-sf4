@@ -4,6 +4,7 @@ namespace Ant\AdminBundle\Admin;
 
 use Ant\AdminBundle\Form\TinymceType;
 use Ant\MediaBundle\Entity\Gallery;
+use Ant\MediaBundle\Entity\Media;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -80,11 +81,12 @@ class HouseAdmin extends AbstractAdmin
                     'choice_label' => 'name',
                 ]
             )
-//            ->add('context', 'sonata_type_translatable_choice', array(
-//                'choices' => $contexts,
-//                'catalogue' => 'SonataMediaBundle'
-//            ))
-
+            ->add('mainPhoto', EntityType::class, [
+                    'required' => false,
+                    'class'=> Media::class,
+                    'choice_label' => 'name',
+                ]
+            )
         ;
     }
 
@@ -126,6 +128,10 @@ class HouseAdmin extends AbstractAdmin
                 'bathroomCount', 'text', [
                 'label' => 'house.bathroomCount',
             ])
+            ->add(
+                'mainPhoto', 'text', [
+                'label' => 'house.mainPhoto',
+            ])
 
         ;
     }
@@ -162,6 +168,9 @@ class HouseAdmin extends AbstractAdmin
         $listMapper
             ->add('title', null, [
                 'label' => 'house.title',
+            ])
+            ->add('mainPhoto', null, [
+                'label' => 'house.mainPhoto',
             ])
             ->add(
                 'description', null, [
