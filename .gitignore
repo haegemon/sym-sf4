@@ -6,6 +6,9 @@
 /public/bundles/
 /var/
 /vendor/
+/gulpfile.js
+/composer.lock
+/composer.phar
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

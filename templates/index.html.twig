@@ -2,16 +2,12 @@
 
 {% block body %}
     {{ dump(houses) }}
-    <!-- ========== MAIN CONTENT ========== -->
-    <main id="content" role="main">
-
-
                 <!-- Hero Section -->
-        <div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden" style="background-image: url(../../assets/img/1920x1080/img51.jpg);">
+        <div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden" style="background-image: url({{ asset ('assets/img/1920x1080/hero_1.jpeg')}});">
             <div class="container space-top-2 space-top-md-5 space-top-lg-4">
                 <!-- Title -->
                 <div class="w-md-100 w-lg-100 text-center mx-md-auto mb-9">
-                    <h1 class="display-4 font-size-md-down-5">Быстро и качественно <strong class="font-weight-semi-bold">строим надёжные дома для Вашего проживания</strong></h1>
+                    <h1 class="display-4 font-size-md-down-5 text-white">Быстро и качественно <strong class="font-weight-semi-bold">строим надёжные дома для Вашего проживания</strong></h1>
                     <p class="lead">Каркасные дома по канадской технологии</p>
                 </div>
                 <!-- End Title -->
@@ -60,57 +56,5 @@
         {% include 'ant_web_bundle/house/index_benefits.html.twig' %}
         {% include 'ant_web_bundle/house/index_testimonials.html.twig' %}
 
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
 
-    <!-- ========== FOOTER ========== -->
-    {% include 'footer.html.twig' %}
-    <!-- ========== END FOOTER ========== -->
-
-    <!-- Go to Top -->
-    <a class="js-go-to u-go-to" href="#"
-       data-position='{"bottom": 15, "right": 15 }'
-       data-type="fixed"
-       data-offset-top="400"
-       data-compensation="#header"
-       data-show-effect="slideInUp"
-       data-hide-effect="slideOutDown">
-        <span class="fas fa-arrow-up u-go-to__inner"></span>
-    </a>
-    <!-- End Go to Top -->
-{% endblock %}
-
-{% block javascripts_init %}
-    <!-- JS Plugins Init. -->
-    <script>
-        $(window).on('load', function () {
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                pageContainer: $('.container'),
-                breakpoint: 767.98,
-                hideTimeOut: 0
-            });
-
-            // initialization of svg injector module
-            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
-        });
-
-        $(document).on('ready', function () {
-            // initialization of header
-            $.HSCore.components.HSHeader.init($('#header'));
-
-            // initialization of forms
-            $.HSCore.components.HSFocusState.init();
-
-            // initialization of form validation
-            $.HSCore.components.HSValidation.init('.js-validate');
-
-            // initialization of slick carousel
-            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-
-            // initialization of go to
-            $.HSCore.components.HSGoTo.init('.js-go-to');
-        });
-    </script>
 {% endblock %}

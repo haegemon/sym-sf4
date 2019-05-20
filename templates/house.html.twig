@@ -2,17 +2,390 @@
 
 {% block body %}
     {{ dump(house) }}
-    <div>
-        Show galleries
+        <!-- Hero Section -->
+    <div id="SVGHero" class="svg-preloader position-relative bg-img-hero" style="background-image: url({% path house.getMainPhoto, 'big' %});">
+        <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+            <div class="w-md-65 w-lg-50">
+                <h1>You're in good company.</h1>
+                <h2 class="h1 text-primary font-weight-medium">Join millions of businesses on Front.</h2>
+            </div>
+        </div>
+
+        <!-- SVG Background -->
+        <figure class="position-absolute right-0 bottom-0 left-0">
+            <img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-9-bottom.svg') }}" alt="Image Description"
+                 data-parent="#SVGHero">
+        </figure>
+        <!-- End SVG Background -->
     </div>
-    {% for media in house.planGallery.galleryHasMedias %}
-        <div>
-            <img class="img-fluid" src="{% path media.media, 'small' %}">
+    <!-- End Hero Section -->
+
+        <!-- Property Description Section -->
+    <div class="container space-bottom-2">
+        <!-- Additional Functions -->
+        <div class="d-md-flex justify-content-md-start align-items-md-center text-center mb-6">
+
+            <a class="btn btn-sm btn-outline-secondary border-white" href="javascript:;">
+                <span class="fas fa-share-alt mr-2"></span>
+                Поделиться
+            </a>
         </div>
-    {% endfor %}
-    {% for media in house.gallery.galleryHasMedias %}
-        <div>
-            <img class="img-fluid" src="{% path media.media, 'small' %}">
+        <!-- End Additional Functions -->
+
+        <!-- Title -->
+        <div class="row justify-content-lg-between">
+            <div class="col-lg-8">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-no-gutter bg-transparent font-size-1">
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="#">Дома</a></li>
+                        <li class="breadcrumb-item"><a href="#">{{ house.title }}</a></li>
+
+                    </ol>
+                </nav>
+                <!-- End Breadcrumb -->
+            </div>
+
+            <div class="col-lg-4 align-self-lg-end text-lg-right mb-5 mb-lg-0">
+                <span class="h3 text-primary font-weight-medium">{{ (house.price)| number_format(0,',',' ') }} р.</span>
+            </div>
         </div>
-    {% endfor %}
+        <!-- End Title -->
+
+        <div class="row space-top-2">
+            <div id="stickyBlockStartPoint" class="col-lg-5 mb-9 mb-lg-0">
+                <!-- Sticky Block -->
+                <div class="js-sticky-block"
+                     data-offset-target="#logoAndNav"
+                     data-parent="#stickyBlockStartPoint"
+                     data-sticky-view="lg"
+                     data-start-point="#stickyBlockStartPoint"
+                     data-end-point="#stickyBlockEndPoint"
+                     data-offset-top="32"
+                     data-offset-bottom="160">
+                <!-- Nav Classic -->
+                <ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-medium active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="true">
+                            <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                                    <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-13.svg') }}" alt="SVG"
+                                         data-parent="#SVGnavIcons">
+                                </figure>
+                                Описание дома
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-medium" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">
+                            <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                                    <img class="js-svg-injector" src="{{ asset('assets/svg/icons/icon-63.svg') }}" alt="SVG"
+                                         data-parent="#SVGnavIcons">
+
+                                </figure>
+                                Планировки
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- End Nav Classic -->
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade pt-6 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+                        <!-- Title -->
+                        <div class="mb-3">
+                            <h2 class="h5">Описание</h2>
+                        </div>
+                        <!-- End Title -->
+
+                        <!-- Key Facts -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Fact List -->
+                                <ul class="list-unstyled font-size-1 mb-0">
+                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                        <span class="font-weight-medium">Площадь:</span>
+                                        <span class="text-secondary">{{ house.size }}</span>
+                                    </li>
+
+                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                        <span class="font-weight-medium">Этажность:</span>
+                                        <span class="text-secondary">{{ house.floorCount }}</span>
+                                    </li>
+
+                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                        <span class="font-weight-medium">Спален:</span>
+                                        <span class="text-secondary">{{ house.bedroomCount }}</span>
+                                    </li>
+
+                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                        <span class="font-weight-medium">Санузлов:</span>
+                                        <span class="text-secondary">{{ house.bathroomCount }}</span>
+                                    </li>
+                                </ul>
+                                <!-- End Fact List -->
+                            </div>
+
+                        </div>
+                        <!-- End Key Facts -->
+
+                                            <!-- Title -->
+                        <div class="mb-3">
+                            <h3 class="h5">Описание дома</h3>
+                        </div>
+                        <!-- End Title -->
+
+                        {{ house.description }}
+                        <!-- Collapse Link - Content -->
+                        <div class="collapse" id="collapseLinkExample">
+                            <h4 class="h6">Directions</h4>
+
+                            <p>Proceed up the Otley Road from the Prince Of Wales roundabout and through the traffic lights with the turning into Harlow Moor Road. Continue ahead where the property can be found on the left hand side.</p>
+
+                            <h4 class="h6">Strictly by appointment through Front House</h4>
+
+                            <p>You may download, store and use the material for your own personal use and research. You may not republish, retransmit, redistribute or otherwise make the material available to any party or make the same available on any website, online service or bulletin board of your own or of any other party or make the same available in hard copy or in any other media without the website owner's express prior written consent. The website owner's copyright must remain on all reproductions of material taken from this website.</p>
+                        </div>
+                        <!-- End Collapse Link - Content -->
+
+                        <!-- Collapse Link -->
+                        <a class="link-collapse" data-toggle="collapse" href="#collapseLinkExample" role="button" aria-expanded="false" aria-controls="collapseLinkExample">
+                            <span class="link-collapse__default">Больше</span>
+                            <span class="link-collapse__active">Свернуть</span>
+                        </a>
+                        <!-- End Collapse Link -->
+
+                    </div>
+
+                    <div class="tab-pane fade pt-6" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+                        <!-- Gallery Plan -->
+
+                        {% for galleryHasMedia in house.planGallery.galleryHasMedias %}
+                        <a class="js-fancybox u-media-viewer" href="javascript:;"
+                           data-src="{% path galleryHasMedia.media, 'big' %}"
+                           data-fancybox="fancyboxGalleryFloorPlan"
+                           data-caption="Floorplan image #01"
+                           data-speed="700"
+                           data-is-infinite="true">
+                            <img class="img-fluid" src="{% path galleryHasMedia.media, 'small' %}" alt="Image Description">
+                        </a>
+                        <!-- End Gallery Plan-->
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- End Tab Content -->
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                {% for galleryHasMedia in house.gallery.GalleryHasMedias %}
+                <div class="mb-5">
+                    <img class="img-fluid rounded" src="{% path galleryHasMedia.media, 'gallery' %}" alt="Image Description">
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+
+        </div>
+        <!-- End Description Section -->
+
+        <!-- Stick Block End Point -->
+        <div id="stickyBlockEndPoint"></div>
+
+
+        <!-- Sticky Block End Point -->
+{% include 'ant_web_bundle/house/house_pricing.html.twig' %}
+
+
+        <!-- Similar Properties Section -->
+        <div class="border-top pt-8 mt-8">
+            <!-- Title -->
+            <div class="mb-3">
+                <h2 class="h5">Другие проекты</h2>
+            </div>
+            <!-- End Title -->
+
+            <!-- Slick Carousel -->
+            <div class="js-slick-carousel u-slick u-slick-zoom u-slick--gutters-3"
+                 data-slides-show="3"
+                 data-arrows-classes="d-none d-lg-inline-block u-slick__arrow u-slick__arrow--flat u-slick__arrow-centered--y rounded-circle"
+                 data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-inner u-slick__arrow-inner--left ml-n2"
+                 data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-inner u-slick__arrow-inner--right mr-n2"
+                 data-pagi-classes="d-lg-none text-center u-slick__pagination mt-5 mb-0"
+                 data-responsive='[{
+               "breakpoint": 992,
+               "settings": {
+                 "slidesToShow": 2
+               }
+             }, {
+               "breakpoint": 768,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }]'>
+                <div class="js-slide card border-0 shadow-sm mb-3">
+                    <!-- House Items -->
+                    <div class="position-relative">
+                        <img class="card-img-top" src="../../assets/img/500x550/img14.jpg" alt="Image Description">
+                        <header class="position-absolute top-0 right-0 left-0 p-5">
+                            <a class="media align-items-center text-white" href="#">
+                                <div class="u-avatar mr-2">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span>Maria Muszynska</span>
+                                </div>
+                            </a>
+                        </header>
+                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
+                            <span class="h4 text-white">$455,000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-5">
+                        <h4 class="h6">
+                            <a href="#">Abbots Way, North Shields</a>
+                        </h4>
+                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
+                        <a class="text-secondary" href="#">London, England</a>
+                    </div>
+                    <!-- End House Items -->
+                </div>
+
+                <div class="js-slide card border-0 shadow-sm mb-3">
+                    <!-- House Items -->
+                    <div class="position-relative">
+                        <img class="card-img-top" src="../../assets/img/500x550/img15.jpg" alt="Image Description">
+                        <header class="position-absolute top-0 right-0 left-0 p-5">
+                            <a class="media align-items-center text-white" href="#">
+                                <div class="u-avatar mr-2">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span>Casy Williams</span>
+                                </div>
+                            </a>
+                        </header>
+                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
+                            <span class="h4 text-white">$750,000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-5">
+                        <h4 class="h6">
+                            <a href="#">Secluded Intown Treehouse</a>
+                        </h4>
+                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
+                        <a class="text-secondary" href="#">New York, US</a>
+                    </div>
+                    <!-- End House Items -->
+                </div>
+
+                <div class="js-slide card border-0 shadow-sm mb-3">
+                    <!-- House Items -->
+                    <div class="position-relative">
+                        <img class="card-img-top" src="../../assets/img/500x550/img16.jpg" alt="Image Description">
+                        <header class="position-absolute top-0 right-0 left-0 p-5">
+                            <a class="media align-items-center text-white" href="#">
+                                <div class="u-avatar mr-2">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img3.jpg" alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span>Chris Johnson</span>
+                                </div>
+                            </a>
+                        </header>
+                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
+                            <span class="h4 text-white">$173,000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-5">
+                        <h4 class="h6">
+                            <a href="#">Malibu Dream Airstream</a>
+                        </h4>
+                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
+                        <a class="text-secondary" href="#">Manhattan, US</a>
+                    </div>
+                    <!-- End House Items -->
+                </div>
+
+                <div class="js-slide card border-0 shadow-sm mb-3">
+                    <!-- House Items -->
+                    <div class="position-relative">
+                        <img class="card-img-top" src="../../assets/img/500x550/img17.jpg" alt="Image Description">
+                        <header class="position-absolute top-0 right-0 left-0 p-5">
+                            <a class="media align-items-center text-white" href="#">
+                                <div class="u-avatar mr-2">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img4.jpg" alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span>Elon Fisher</span>
+                                </div>
+                            </a>
+                        </header>
+                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
+                            <span class="h4 text-white">$199,000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-5">
+                        <h4 class="h6">
+                            <a href="#">Tintern Crescent</a>
+                        </h4>
+                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
+                        <a class="text-secondary" href="#">Toronto, Canada</a>
+                    </div>
+                    <!-- End House Items -->
+                </div>
+
+                <div class="js-slide card border-0 shadow-sm mb-3">
+                    <!-- House Items -->
+                    <div class="position-relative">
+                        <img class="card-img-top" src="../../assets/img/500x550/img18.jpg" alt="Image Description">
+                        <header class="position-absolute top-0 right-0 left-0 p-5">
+                            <a class="media align-items-center text-white" href="#">
+                                <div class="u-avatar mr-2">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span>Maria Muszynska</span>
+                                </div>
+                            </a>
+                        </header>
+                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
+                            <span class="h4 text-white">$376,000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-5">
+                        <h4 class="h6">
+                            <a href="#">Tiverton Avenue</a>
+                        </h4>
+                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
+                        <a class="text-secondary" href="#">Beijing, China</a>
+                    </div>
+                    <!-- End House Items -->
+                </div>
+            </div>
+            <!-- End Slick Carousel -->
+        </div>
+        <!-- End Similar Properties Section -->
+
+    <!-- End Property Description Section -->
+
+    <script>
+        $(document).on('ready', function () {
+            // initialization of slick carousel
+            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        });
+    </script>
+
+
 {% endblock %}
