@@ -1,0 +1,92 @@
+<ul class="navbar-nav u-header__navbar-nav">
+    {% for menuItem in item %}
+        {% if menuItem.hasChildren and menuItem.displayChildren %}
+            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut"
+                data-position="left">
+                <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="{{ menuItem.uri}}" aria-haspopup="true" aria-expanded="false">{{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages'))  }}</a>
+{#                {% for child in menuItem.children %}#}
+{#                    {{ dump(child) }}#}
+{#                {% endfor %}#}
+                <!-- Home - Mega Menu -->
+                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <!-- Banner Image -->
+                            <div class="u-header__banner" style="background-image: url(../../assets/img/750x750/img1.jpg);">
+                                <div class="u-header__banner-content">
+                                    <div class="mb-4">
+                                        <span class="u-header__banner-title">Branding Works</span>
+                                        <p class="u-header__banner-text">Experience a level of our quality in both design &amp; customization works.</p>
+                                    </div>
+                                    <a class="btn btn-primary btn-sm transition-3d-hover" href="#">Learn More <span class="fas fa-angle-right ml-2"></span></a>
+                                </div>
+                            </div>
+                            <!-- End Banner Image -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="row u-header__mega-menu-wrapper">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <span class="u-header__sub-menu-title">Classic</span>
+                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="index.html">Classic Agency</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-business.html">Classic Business</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-marketing.html">Classic Marketing</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-consulting.html">Classic Consulting</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-start-up.html">Classic Start-up</a></li>
+                                    </ul>
+
+                                    <span class="u-header__sub-menu-title">Corporate</span>
+                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-agency.html">Corporate Agency</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-start-up.html">Corporate Start-Up</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-business.html">Corporate Business</a></li>
+                                    </ul>
+
+                                    <span class="u-header__sub-menu-title">Portfolio</span>
+                                    <ul class="u-header__sub-menu-nav-group">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-agency.html">Portfolio Agency</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-profile.html">Portfolio Profile</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <span class="u-header__sub-menu-title">App</span>
+                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-saas.html">App SaaS <span class="badge badge-success badge-pill ml-1">New</span></a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-workflow.html">App Workflow <span class="badge badge-success badge-pill ml-1">New</span></a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-payment.html">App Payment</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-software.html">App Software</a></li>
+                                    </ul>
+
+                                    <span class="u-header__sub-menu-title">Onepages</span>
+                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-creative.html">Onepage Creative</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-saas.html">Onepage SaaS</a></li>
+                                    </ul>
+
+                                    <span class="u-header__sub-menu-title">Blog</span>
+                                    <ul class="u-header__sub-menu-nav-group">
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-agency.html">Blog Agency</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-start-up.html">Blog Start-Up</a></li>
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-business.html">Blog Business</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item u-header__nav-last-item">
+                <a class="btn btn-sm btn-white transition-3d-hover" href="{{ menuItem.uri}}">
+                    {{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages')) }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    <!-- End Button -->
+</ul>

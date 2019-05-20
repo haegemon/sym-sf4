@@ -118,3 +118,7 @@ house:
   list:  Новости
   read:  Подробнее
   back:  Назад
+top_menu:
+  houses: Каркасные дома
+  services: Услуги
+  technologies: Как мы строим?

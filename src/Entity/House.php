@@ -11,7 +11,7 @@ use Ant\MediaBundle\Entity\Gallery;
  * Class House
  * @package App\Entity
  * @ORM\Table(name="houses")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="App\Repository\HouseRepository")
  */
 class House
 {

@@ -13,10 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class HBDOMController extends AbstractController
 {
+    private const OTHER_LIMIT = 4;
 
     /**
      * Index page
-     * @Route("/",)
+     * @Route("/", name="dom_index")
      */
     public function indexAction()
     {
@@ -35,7 +36,7 @@ class HBDOMController extends AbstractController
 
     /**
      * Index page
-     * @Route("/houses",)
+     * @Route("/houses", name="dom_houses")
      */
     public function listAction()
     {
@@ -68,6 +69,59 @@ class HBDOMController extends AbstractController
 
         return $this->render('house.html.twig', array(
             'house' => $house,
+        ));
+    }
+
+    /**
+     * Index page
+     * @Route("/services", name="dom_services")
+     */
+    public function servicesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $houses = $em->getRepository(House::class)->findBy(
+            [],
+            ['id' => 'DESC'],
+            3
+        );
+
+        return $this->render('index.html.twig', array(
+            'houses' => $houses,
+        ));
+    }
+
+    /**
+     * Index page
+     * @Route("/technologies", name="dom_technologies")
+     */
+    public function technologiesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $houses = $em->getRepository(House::class)->findBy(
+            [],
+            ['id' => 'DESC'],
+            3
+        );
+
+        return $this->render('index.html.twig', array(
+            'houses' => $houses,
+        ));
+    }
+
+    /**
+     * Index page
+     * @Route("/others/{id}", name="dom_others")
+     */
+    public function othersAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $houses = $em->getRepository(House::class)->selectOther($id, self::OTHER_LIMIT);
+
+        return $this->render('others.html.twig', array(
+            'houses' => $houses,
         ));
     }
 }

@@ -44,6 +44,16 @@ services:
     security.acl.permission.map:
         class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
 
+    app.menu_builder:
+        class: App\Menu\FrontendBuilder
+
+    app.menu.main_menu:
+        class: Knp\Menu\MenuItem
+        factory: ['@app.menu_builder', 'mainMenu']
+        tags:
+            - { name: knp_menu.menu, alias: mainMenu }
+
+
 fos_user:
     db_driver: orm
     firewall_name: main
@@ -92,7 +102,7 @@ gregwar_captcha: ~
 
 knp_menu:
     twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
-        template: AntWebBundle::knp_menu.html.twig
+        template: top_menu.html.twig
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
 
