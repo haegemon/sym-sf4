@@ -7,7 +7,7 @@
  */
 :root {
   --blue: #377dff;
-  --indigo: #2d1582;
+  --indigo: #542504;
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #de4437;
@@ -28,7 +28,7 @@
   --light: #f8f9fa;
   --dark: #1e2022;
   --white: #fff;
-  --indigo: #2d1582;
+  --indigo: #542504;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2768,8 +2768,8 @@ fieldset:disabled a.btn {
 
 .btn-indigo {
   color: #fff;
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 .btn-indigo:hover {
@@ -2784,8 +2784,8 @@ fieldset:disabled a.btn {
 
 .btn-indigo.disabled, .btn-indigo:disabled {
   color: #fff;
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 .btn-indigo:not(:disabled):not(.disabled):active, .btn-indigo:not(:disabled):not(.disabled).active,
@@ -3089,14 +3089,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-indigo {
-  color: #2d1582;
-  border-color: #2d1582;
+  color: #542504;
+  border-color: #542504;
 }
 
 .btn-outline-indigo:hover {
   color: #fff;
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 .btn-outline-indigo:focus, .btn-outline-indigo.focus {
@@ -3104,15 +3104,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-indigo.disabled, .btn-outline-indigo:disabled {
-  color: #2d1582;
+  color: #542504;
   background-color: transparent;
 }
 
 .btn-outline-indigo:not(:disabled):not(.disabled):active, .btn-outline-indigo:not(:disabled):not(.disabled).active,
 .show > .btn-outline-indigo.dropdown-toggle {
   color: #fff;
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 .btn-outline-indigo:not(:disabled):not(.disabled):active:focus, .btn-outline-indigo:not(:disabled):not(.disabled).active:focus,
@@ -5203,7 +5203,7 @@ a.badge-white:focus, a.badge-white.focus {
 
 .badge-indigo {
   color: #fff;
-  background-color: #2d1582;
+  background-color: #542504;
 }
 
 a.badge-indigo:hover, a.badge-indigo:focus {
@@ -6792,7 +6792,7 @@ button.bg-white:focus {
 }
 
 .bg-indigo {
-  background-color: #2d1582 !important;
+  background-color: #542504 !important;
 }
 
 a.bg-indigo:hover, a.bg-indigo:focus,
@@ -6886,7 +6886,7 @@ button.bg-indigo:focus {
 }
 
 .border-indigo {
-  border-color: #2d1582 !important;
+  border-color: #542504 !important;
 }
 
 .border-white {
@@ -12015,7 +12015,7 @@ a.text-white:hover, a.text-white:focus {
 }
 
 .text-indigo {
-  color: #2d1582 !important;
+  color: #542504 !important;
 }
 
 a.text-indigo:hover, a.text-indigo:focus {
@@ -16197,7 +16197,7 @@ button:focus {
 /* indigo badge */
 .badge-outline-indigo {
   color: #fff;
-  background: #2d1582;
+  background: #542504;
   border-color: #fff;
 }
 
@@ -16998,13 +16998,13 @@ button:focus {
 }
 
 .btn-indigo:not(label.btn), .btn-indigo:not(label.btn):not([href]):not(:disabled):not(.disabled), .btn-indigo:not([href]), .btn-indigo:not([href]):not([href]):not(:disabled):not(.disabled) {
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 .btn-indigo:hover {
-  background-color: #2d1582;
-  border-color: #2d1582;
+  background-color: #542504;
+  border-color: #542504;
 }
 
 /* facebook button :hover, :focus, :active effects */
@@ -17401,19 +17401,19 @@ button:focus {
 
 /* indigo air */
 .btn-soft-indigo {
-  color: #2d1582;
+  color: #542504;
   background: rgba(45, 21, 130, 0.1);
   border-color: transparent;
 }
 
 .btn-soft-indigo[href]:hover, .btn-soft-indigo[href]:focus, .btn-soft-indigo[href]:active, .btn-soft-indigo[href].active, .btn-soft-indigo[type]:hover, .btn-soft-indigo[type]:focus, .btn-soft-indigo[type]:active, .btn-soft-indigo[type].active {
   color: #fff;
-  background: #2d1582;
+  background: #542504;
   box-shadow: 0 4px 11px rgba(45, 21, 130, 0.35);
 }
 
 .btn-soft-indigo[href].disabled, .btn-soft-indigo[href]:disabled, .btn-soft-indigo[type].disabled, .btn-soft-indigo[type]:disabled {
-  color: #2d1582;
+  color: #542504;
   background-color: rgba(45, 21, 130, 0.1);
   box-shadow: none;
 }
@@ -17422,11 +17422,11 @@ button:focus {
 .show > .btn-soft-indigo[href].dropdown-toggle, .btn-soft-indigo[type]:not(:disabled):not(.disabled):active, .btn-soft-indigo[type]:not(:disabled):not(.disabled).active,
 .show > .btn-soft-indigo[type].dropdown-toggle {
   color: #fff;
-  background-color: #2d1582;
+  background-color: #542504;
 }
 
 .btn.btn-soft-indigo {
-  color: #2d1582;
+  color: #542504;
 }
 
 /* facebook air */
@@ -17742,7 +17742,7 @@ button:focus {
 
 /* indigo text button */
 .btn-text-indigo {
-  color: #2d1582;
+  color: #542504;
   background: transparent;
 }
 
@@ -21244,13 +21244,14 @@ label.btn {
   Background Gradients
 ------------------------------------*/
 .gradient-half-primary-body-v1 {
-  background-image: linear-gradient(150deg, #2d1582 0%, #19a0ff 100%);
+  /*background-image: linear-gradient(150deg, #542504 0%, #ff3737 100%);*/
+  background-image: linear-gradient(150deg, #542504 0%, #ff3737 100%);
   background-repeat: repeat-x;
   background-attachment: fixed;
 }
 
 .gradient-half-primary-v1 {
-  background-image: linear-gradient(150deg, #2d1582 0%, #19a0ff 100%);
+  background-image: linear-gradient(150deg, #542504 0%, #ff3737 100%);
   background-repeat: repeat-x;
 }
 
@@ -21265,12 +21266,12 @@ label.btn {
 }
 
 .gradient-half-primary-v4 {
-  background-image: linear-gradient(150deg, #2d1582 0%, #19a0ff 85%);
+  background-image: linear-gradient(150deg, #542504 0%, #ff3737 85%);
   background-repeat: repeat-x;
 }
 
 .gradient-half-primary-v5 {
-  background-image: linear-gradient(150deg, #377dff 0%, #2d1582 100%);
+  background-image: linear-gradient(150deg, #377dff 0%, #542504 100%);
   background-repeat: repeat-x;
 }
 
@@ -21380,7 +21381,7 @@ label.btn {
 }
 
 .fill-primary-lighter {
-  fill: #19a0ff !important;
+  fill: #ff3737 !important;
 }
 
 .fill-primary-darker {
@@ -21459,7 +21460,7 @@ label.btn {
 }
 
 .stop-color-primary-lighter {
-  stop-color: #19a0ff !important;
+  stop-color: #ff3737 !important;
 }
 
 .stop-color-warning {
@@ -21475,7 +21476,7 @@ label.btn {
 }
 
 .stop-color-indigo {
-  stop-color: #2d1582 !important;
+  stop-color: #542504 !important;
 }
 
 /*------------------------------------
@@ -21490,7 +21491,7 @@ label.btn {
 }
 
 .stroke-primary-lighter {
-  stroke: #19a0ff !important;
+  stroke: #ff3737 !important;
 }
 
 .stroke-primary-darker {
