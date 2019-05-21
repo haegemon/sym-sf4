@@ -81,10 +81,10 @@ class HouseAdmin extends AbstractAdmin
                     'choice_label' => 'name',
                 ]
             )
-            ->add('mainPhoto', EntityType::class, [
+            ->add('mainPhoto', MediaType::class, [
                     'required' => false,
-                    'class'=> Media::class,
-                    'choice_label' => 'name',
+                    'provider' => 'sonata.media.provider.image',
+                    'context'  => 'default'
                 ]
             )
         ;
@@ -131,6 +131,7 @@ class HouseAdmin extends AbstractAdmin
             ->add(
                 'mainPhoto', 'text', [
                 'label' => 'house.mainPhoto',
+                'template' => '@SonataMedia/MediaAdmin/list_image.html.twig'
             ])
 
         ;
@@ -169,8 +170,9 @@ class HouseAdmin extends AbstractAdmin
             ->add('title', null, [
                 'label' => 'house.title',
             ])
-            ->add('mainPhoto', null, [
+            ->add('mainPhoto', 'string', [
                 'label' => 'house.mainPhoto',
+                'template' => '@SonataMedia/MediaAdmin/list_image.html.twig'
             ])
             ->add(
                 'description', null, [

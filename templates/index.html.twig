@@ -46,7 +46,7 @@
         </div>
         <!-- End Hero Section -->
         {% include 'ant_web_bundle/house/index_benefits.html.twig' %}
-        {% include 'ant_web_bundle/house/index_testimonials.html.twig' %}
+    {{ render(controller('App\\Controller\\HBDOMController::testimonialsAction' )) }}
 
 
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\House;
+use App\Entity\Testimonial;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -122,6 +123,17 @@ class HBDOMController extends AbstractController
 
         return $this->render('ant_web_bundle/house/house_others.html.twig', array(
             'houses' => $houses,
+        ));
+    }
+
+    public function testimonialsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $testimonials = $em->getRepository(Testimonial::class)->findAll();
+
+        return $this->render('testimonials.html.twig', array(
+            'testimonials' => $testimonials,
         ));
     }
 }

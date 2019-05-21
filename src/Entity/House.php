@@ -122,7 +122,8 @@ class House
      * @var Media
      *
      * @ORM\ManyToOne(
-     *     targetEntity="Ant\MediaBundle\Entity\Media"
+     *     targetEntity="Ant\MediaBundle\Entity\Media",
+     *     cascade={"PERSIST", "REMOVE"}
      * )
      */
     private $mainPhoto;
