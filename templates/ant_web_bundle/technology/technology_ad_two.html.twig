@@ -1,0 +1,45 @@
+<!-- Features Section -->
+<div>
+    <div class="container space-bottom-2 space-bottom-lg-3">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+                <span class="d-block text-secondary font-size-1 font-weight-medium text-uppercase mb-2">{{ adGroupTitle }}</span>
+                <h2 class="font-weight-medium">Посмотрите на разные варианты</h2>
+            </div>
+            <!-- End Title -->
+        <div class="row">
+            <div class="col-lg-7 mb-7 mb-lg-0">
+                <!-- Nav -->
+                <ul class="nav nav-box" role="tablist">
+                    {% for ad in ads %}
+                        <li class="nav-item w-100 mx-0 mb-3">
+                            <a class="nav-link p-4 {% if loop.first %}active{% else %}{% endif %}" id="pills-{{ ad.id }}-code-features-tab" data-toggle="pill" href="#pills-{{ ad.id }}-code-features" role="tab" aria-controls="pills-{{ ad.id }}-code-features" aria-selected="true">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h3 class="h6">{{ ad.title }}</h3>
+                                        <p class="mb-0">{{ ad.text }}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <!-- End Nav -->
+            </div>
+            <div class="col-lg-5 align-self-lg-end">
+                <!-- Tab Content -->
+                <div class="tab-content pr-lg-4">
+                    {% for ad in ads %}
+                        <div class="tab-pane fade {% if loop.first %}show active{% else %}{% endif %}" id="pills-{{ ad.id }}-code-features" role="tabpanel" aria-labelledby="pills-{{ ad.id }}-code-features-tab">
+                            <div class="rounded">
+                                <img class="img-fluid rounded-lg" src="{%  path ad.getMedia, 'big' %}" alt="Image Description">
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- End Tab Content -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Features Section -->

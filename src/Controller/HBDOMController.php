@@ -120,7 +120,7 @@ class HBDOMController extends AbstractController
 
         $houses = $em->getRepository(House::class)->selectOther($id, self::OTHER_LIMIT);
 
-        return $this->render('others.html.twig', array(
+        return $this->render('ant_web_bundle/house/house_others.html.twig', array(
             'houses' => $houses,
         ));
     }

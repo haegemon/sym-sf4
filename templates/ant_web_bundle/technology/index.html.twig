@@ -1,226 +1,60 @@
 {% extends 'front_layout.html.twig' %}
 {% block body %}
-<!-- Hire Us Title Section -->
-<div id="SVGheroBgElements" class="svg-preloader position-relative overflow-hidden">
-    <div class="container space-top-2 space-bottom-3 space-bottom-lg-4">
-        <div class="w-md-80 w-lg-50 text-center mx-md-auto">
-            <h1 class="text-primary">Как мы строим?</h1>
-            <p class="lead">Современные материалы и проверенные технологии позволяют экономить время, сохраняя высокое качество.</p>
-        </div>
-    <!-- SVG Bottom Shape -->
-    <figure class="position-absolute right-0 bottom-0 left-0">
-        <img class="js-svg-injector" src="../../assets/svg/components/wave-4-bottom.svg" alt="Image Description"
-             data-parent="#SVGheroBgElements">
-    </figure>
-    <!-- End SVG Bottom Shape -->
-</div>
-
-</div>
-
-    <!-- Mockup Block -->
-    <div class="container space-bottom-2 space-bottom-md-3">
-        <div class="row align-items-lg-center">
-            <div class="col-lg-5 mb-7 mb-lg-0">
-                <!-- Title -->
-                <div class="pr-lg-4">
-        <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-          <span class="small font-weight-semi-bold btn-icon__inner">01.</span>
-        </span>
-                    <h2 class="h4 font-weight-semi-bold text-primary">Устройство фундамента</h2>
-                    <p class="mb-0">Sophisticated model providing analysis for the entire blockchain asset ecosystem. Strategic insights based on research, trends,and 50+ unique indicators to properly evaluate investment potential and risk.</p>
-                </div>
-                <!-- End Title -->
-            </div>
-
-            <div id="SVGmarketingStrategy" class="col-lg-7 svg-preloader">
-                <!-- SVG Icon -->
-                <figure class="ie-marketing-strategy">
-                    <img class="js-svg-injector" src="../../assets/svg/illustrations/marketing-strategy.svg" alt="Image Description"
-                         data-parent="#SVGmarketingStrategy">
-                </figure>
-                <!-- End SVG Icon -->
+    <!-- Hero Section -->
+    <div id="SVGwave1BottomSMShape" class="svg-preloader position-relative bg-light overflow-hidden">
+        <div class="container space-3">
+            <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <h1 class="display-4 font-size-md-down-5 text-primary">Узнайте, <span class="font-weight-semi-bold">как мы строим</span></h1>
+                <p class="lead">Современные материалы и проверенные технологии позволяют экономить время, сохраняя высокое качество.</p>
             </div>
         </div>
+
+        <!-- SVG Background -->
+        <figure class="position-absolute right-0 bottom-0 left-0">
+            <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+                 data-parent="#SVGwave1BottomSMShape">
+        </figure>
+        <!-- End SVG Background Section -->
     </div>
-    <!-- End Mockup Block -->
+    <!-- End Hero Section -->
+    {%  include ('ant_web_bundle/technology/_pie.html.twig') %}
 
-    <!-- Mockup Block -->
-    <div class="container space-1">
-        <div class="row align-items-lg-center">
-            <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
-                <!-- Title -->
-                <div class="pl-lg-4">
-        <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-          <span class="small font-weight-semi-bold btn-icon__inner">02.</span>
-        </span>
-                    <h2 class="h4 font-weight-semi-bold text-primary">Каркас</h2>
-                    <p class="mb-0">Advanced distributed system architecture built to protect against DDoS and other potential threats. More than 98% of digital assets stored in multi-signature,cold wallets. Security protocols are fully aligned and compliant with industry best practices.</p>
-                </div>
-                <!-- End Title -->
-            </div>
-
-            <div id="SVGappDevelopment" class="col-lg-7 order-lg-1 svg-preloader">
-                <!-- SVG Icon -->
-                <figure class="ie-app-development">
-                    <img class="js-svg-injector" src="../../assets/svg/illustrations/app-development.svg" alt="SVG Illustration"
-                         data-parent="#SVGappDevelopment">
-                </figure>
-                <!-- End SVG Icon -->
-            </div>
-        </div>
-    </div>
-    <!-- End Mockup Block -->
-
-    <!-- Mockup Block -->
-                <div class="overflow-hidden">
-                    <div class="container space-2">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-lg-5 mb-7 mb-lg-0">
+    {#{{ render(url('technology_pie')) }}#}
 
 
-                <!-- Title -->
-                <div class="pr-lg-4">
-        <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-          <span class="small font-weight-semi-bold btn-icon__inner">03.</span>
-        </span>
-                    <h2 class="h4 font-weight-semi-bold text-primary">Укладка кровли</h2>
-                    <p class="mb-0">Empowering millions of users, across 130+ countries. Over $1 Billion in assets. 24/7/365 customer access and support. A trusted world-class operation designed specifically for knowledgeable crypto-investors.</p>
-                </div>
-                <!-- End Title -->
-            </div>
+    {{ render(url('technology_ad_two')) }}
+    {{ render(url('technology_ad_three')) }}
+    {{ render(url('technology_ad_five')) }}
+    {{ render(url('technology_ad_six')) }}
 
-            <div class="col-lg-6 position-relative">
-                <div class="row mx-gutters-2">
-                    <div class="col-5 align-self-end px-2 mb-3">
-                        <!-- Fancybox -->
-                        <a class="js-fancybox u-media-viewer" href="javascript:;"
-                           data-src="../../assets/img/1920x1080/img2.jpg"
-                           data-fancybox="lightbox-gallery-hidden"
-                           data-caption="Front in frames - image #01"
-                           data-speed="700">
-                            <img class="img-fluid rounded" src="../../assets/img/320x320/img1.jpg" alt="Image Description">
+    {%  include ('ant_web_bundle/technology/_benefits.html.twig') %}
 
-                            <span class="u-media-viewer__container">
-                <span class="u-media-viewer__icon">
-                  <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                </span>
-              </span>
-                        </a>
-                        <!-- End Fancybox -->
-                    </div>
-
-                    <div class="col-7 px-2 mb-3">
-                        <!-- Fancybox -->
-                        <a class="js-fancybox u-media-viewer" href="javascript:;"
-                           data-src="../../assets/img/1920x1080/img4.jpg"
-                           data-fancybox="lightbox-gallery-hidden"
-                           data-caption="Front in frames - image #02"
-                           data-speed="700">
-                            <img class="img-fluid rounded" src="../../assets/img/450x450/img1.jpg" alt="Image Description">
-
-                            <span class="u-media-viewer__container">
-                <span class="u-media-viewer__icon">
-                  <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                </span>
-              </span>
-                        </a>
-                        <!-- End Fancybox -->
-                    </div>
-
-                    <div class="col-5 offset-1 px-2 mb-3">
-                        <!-- Fancybox -->
-                        <a class="js-fancybox u-media-viewer" href="javascript:;"
-                           data-src="../../assets/img/1920x1920/img1.jpg"
-                           data-fancybox="lightbox-gallery-hidden"
-                           data-caption="Front in frames - image #03"
-                           data-speed="700">
-                            <img class="img-fluid rounded" src="../../assets/img/280x310/img1.jpg" alt="Image Description">
-
-                            <span class="u-media-viewer__container">
-                <span class="u-media-viewer__icon">
-                  <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                </span>
-              </span>
-                        </a>
-                        <!-- End Fancybox -->
-                    </div>
-
-                    <div class="col-5 px-2 mb-3">
-                        <!-- Fancybox -->
-                        <a class="js-fancybox u-media-viewer" href="javascript:;"
-                           data-src="../../assets/img/1920x1080/img3.jpg"
-                           data-fancybox="lightbox-gallery-hidden"
-                           data-caption="Front in frames - image #04"
-                           data-speed="700">
-                            <img class="img-fluid rounded" src="../../assets/img/300x180/img1.jpg" alt="Image Description">
-
-                            <span class="u-media-viewer__container">
-                <span class="u-media-viewer__icon">
-                  <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                </span>
-              </span>
-                        </a>
-                        <!-- End Fancybox -->
-                    </div>
-                </div>
-                <!-- End Image Gallery -->
-
-                <!-- SVG Background Shape -->
-                <div id="SVGbgShapeID1" class="svg-preloader w-100 content-centered-y z-index-n1">
-                    <figure class="ie-soft-triangle-shape">
-                        <img class="js-svg-injector" src="../../assets/svg/components/soft-triangle-shape.svg" alt="Image Description"
-                             data-parent="#SVGbgShapeID1">
-                    </figure>
-                </div>
-                <!-- End SVG Background Shape -->
-            </div>
-        </div>
-    </div>
-                </div>
-    <!-- End Mockup Block -->
-    <!-- Mockup Block -->
-    <div class="container space-2">
-        <div class="row align-items-lg-center">
-            <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
-                <!-- Title -->
-                <div class="pl-lg-4">
-        <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-          <span class="small font-weight-semi-bold btn-icon__inner">04.</span>
-        </span>
-                    <h2 class="h4 font-weight-semi-bold text-primary">Инженерные коммуникации</h2>
-                    <p class="mb-0">Advanced distributed system architecture built to protect against DDoS and other potential threats. More than 98% of digital assets stored in multi-signature,cold wallets. Security protocols are fully aligned and compliant with industry best practices.</p>
-                </div>
-                <!-- End Title -->
-            </div>
-
-            <div id="SVGappDevelopment" class="col-lg-7 order-lg-1 svg-preloader">
-                <!-- SVG Icon -->
-                <figure class="ie-app-development">
-                    <img class="js-svg-injector" src="" alt="SVG Illustration"
-                         data-parent="#SVGappDevelopment">
-                </figure>
-                <!-- End SVG Icon -->
-            </div>
-        </div>
-    </div>
-    <!-- End Mockup Block -->
 
 {% endblock %}
+
+{% block javascripts_vendor %}
+    {{ parent() }}
+    <script src="{{ asset('assets/vendor/appear.js') }}"></script>
+{% endblock %}
+    {% block javascripts_plugins %}
+        {{ parent() }}
+        <script src="{{ asset('assets/vendor/circles/circles.min.js') }}"></script>
+    {% endblock %}
+
+    {% block javascripts_front %}
+        {{ parent() }}
+
+        <script src="{{ asset('assets/js/components/hs.chart-pie.js') }}"></script>
+    {% endblock %}
+
+
 {#{% block javascripts_init %}#}
+    {#{{ parent() }}#}
+
     {#<script>#}
-        {#Circles.create({#}
-            {#id:           'circles-1',#}
-            {#radius:       60,#}
-            {#value:        43,#}
-            {#maxValue:     100,#}
-            {#width:        10,#}
-            {#text:         function(value){return value + '%';},#}
-            {#colors:       ['#D3B6C6', '#4B253A'],#}
-            {#duration:     400,#}
-            {#wrpClass:     'circles-wrp',#}
-            {#textClass:    'circles-text',#}
-            {#styleWrapper: true,#}
-            {#styleText:    true#}
-        {#})#}
+        {#$(document).on('ready', function () {#}
+            {#// initialization of chart pies#}
+            {#var items = $.HSCore.components.HSChartPie.init('.js-pie');#}
+        {#});#}
     {#</script>#}
 {#{% endblock %}#}

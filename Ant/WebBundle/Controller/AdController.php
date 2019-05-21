@@ -3,7 +3,7 @@
 namespace Ant\WebBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 
@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
  * Ad controller.
  *
  */
-class AdController extends Controller
+class AdController extends AbstractController
 {
 
 
@@ -35,7 +35,7 @@ class AdController extends Controller
 
         );
 
-        return $this->render('AntWebBundle:Ad:index.html.twig', array(
+        return $this->render('/ant_web_bundle/technology/_pie.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -47,7 +47,7 @@ class AdController extends Controller
     public function listOneGroupAction($id, $adGroupTemplate)
     {
         $em = $this->getDoctrine()->getManager();
-        $ad = $em->getRepository('AntWebBundle:Ad')->findByAdGroup($id);
+        $ads = $em->getRepository('AntWebBundle:Ad')->findByAdGroup($id);
 
         $adGroup = $this->getDoctrine()
             ->getRepository('AntWebBundle:AdGroup')
@@ -55,7 +55,7 @@ class AdController extends Controller
         $adGroupTitle = $adGroup->getTitle();
 
         return $this->render($adGroupTemplate, array(
-            'ad'=>$ad,
+            'ads'=>$ads,
             'adGroupTitle'=>$adGroupTitle,
         ));
     }
@@ -65,7 +65,7 @@ class AdController extends Controller
      * Finds and displays a Ad entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id, $adTemplate)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -75,7 +75,7 @@ class AdController extends Controller
             throw $this->createNotFoundException('Unable to find Ad entity.');
         }
 
-        return $this->render('AntWebBundle:Ad:show.html.twig', array(
+        return $this->render($adTemplate, array(
             'entity'      => $entity,
         ));
     }

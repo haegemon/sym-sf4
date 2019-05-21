@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     {% block metakeywords %}{% endblock %}
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
     <!-- Favicon -->
     <link rel="shortcut icon" href="../../favicon.ico">
 
@@ -20,6 +20,7 @@
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% endblock %}
 </head>
 <body>
 {% block header %}
@@ -32,7 +33,7 @@
                 <!-- Nav -->
                 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                     <!-- Logo -->
-                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="index.html" aria-label="Front">
+                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{ path ('dom_index') }}" aria-label="Front">
                                               <span class="u-header__navbar-brand-text">HBDom</span>
                     </a>
                     <!-- End Logo -->
@@ -80,22 +81,24 @@
         <span class="fas fa-arrow-up u-go-to__inner"></span>
     </a>
     <!-- End Go to Top -->{% endblock %}
-
+{% block javascripts_vendor %}
 <!-- JS Global Compulsory -->
 <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
-{% block javascripts_vendor %}{% endblock %}
+{% endblock %}
 
-<!-- JS Implementing Plugins -->
+    {% block javascripts_plugins %}
+        <!-- JS Implementing Plugins -->
 <script src="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
 <script src="{{ asset('assets/vendor/svg-injector/dist/svg-injector.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/slick-carousel/slick/slick.js') }}"></script>
 <script src="{{ asset('assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-{% block javascripts_plugins %}{% endblock %}
+{% endblock %}
 
+{% block javascripts_front %}
 <!-- JS Front -->
 <script src="{{ asset('assets/js/hs.core.js') }}"></script>
 <script src="{{ asset('assets/js/components/hs.header.js') }}"></script>
@@ -108,7 +111,7 @@
 
 
 <!-- JS Implementing Plugins -->
-{% block javascripts_front %}{% endblock %}
+{% endblock %}
 
 {% block javascripts_init %}
 
@@ -144,6 +147,9 @@
 
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            var items = $.HSCore.components.HSChartPie.init('.js-pie');
+
         });
     </script>
 

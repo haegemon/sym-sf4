@@ -1,18 +1,10 @@
 {% extends 'front_layout.html.twig' %}
 
 {% block body %}
-    {{ dump(houses) }}
                 <!-- Hero Section -->
-        <div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden" style="background-image: url({{ asset ('assets/img/1920x1080/hero_1.jpeg')}});">
-            <div class="container space-top-2 space-top-md-5 space-top-lg-4">
-                <!-- Title -->
-                <div class="w-md-100 w-lg-100 text-center mx-md-auto mb-9">
-                    <h1 class="display-4 font-size-md-down-5 text-white">Быстро и качественно <strong class="font-weight-semi-bold">строим надёжные дома для Вашего проживания</strong></h1>
-                    <p class="lead">Каркасные дома по канадской технологии</p>
-                </div>
-                <!-- End Title -->
+    {{ render(url('ad_one')) }}
 
-                <!-- Houses Carousel -->
+    <!-- Houses Carousel -->
                 <div class="js-slick-carousel u-slick u-slick--gutters-3 z-index-2"
                      data-slides-show="5"
                      data-slides-scroll="1"

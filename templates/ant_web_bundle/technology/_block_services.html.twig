@@ -1,0 +1,66 @@
+<!-- Features Section -->
+<div class="container space-2 text-center">
+    <div class="position-relative pt-11 pb-7">
+        <div class="position-relative z-index-2 p-2 p-sm-0">
+            <!-- News Carousel -->
+            <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3 mb-5"
+                 data-slides-show="3"
+                 data-slides-scroll="1"
+                 data-pagi-classes="d-lg-none u-slick__pagination u-slick__pagination--white mt-5 mb-0"
+                 data-responsive='[{
+             "breakpoint": 1200,
+             "settings": {
+               "slidesToShow": 3
+             }
+           }, {
+             "breakpoint": 992,
+             "settings": {
+               "slidesToShow": 2
+             }
+           }, {
+             "breakpoint": 768,
+             "settings": {
+               "slidesToShow": 2
+             }
+           }, {
+             "breakpoint": 554,
+             "settings": {
+               "slidesToShow": 1
+             }
+           }]'>
+
+                {% for ad in ads %}
+                <!-- Card Block -->
+                <div class="js-slide mt-1 mb-2">
+                    <div class="w-100 bg-white shadow-soft rounded py-6 px-4">
+                        <h3 class="h5 font-weight-semi-bold mb-5">{{ ad.title }}</h3>
+
+                        <figure id="featuresSVG1" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
+                            <img class="js-svg-injector" src="{% path ad.getMedia, 'big' %}" alt="Image Description"
+                                 data-parent="#featuresSVG1">
+                        </figure>
+
+                        <p>{{ ad.text }}</p>
+                    </div>
+                </div>
+                <!-- End Card Block -->
+{% endfor %}
+            </div>
+
+            <!-- Info -->
+            <p class="text-white">
+                See Help Front in action.
+                <a class="text-warning font-weight-medium" href="#">
+                    Get a Demo
+                    <span class="btn btn-icon btn-sm btn-white rounded-circle ml-2">
+            <span class="fas fa-arrow-right btn-icon__inner"></span>
+          </span>
+                </a>
+            </p>
+            <!-- End Info -->
+        </div>
+
+        <!-- Background -->
+        <div class="gradient-half-primary-v4 position-absolute top-0 right-0 bottom-0 left-0 rounded-lg mx-sm-7"></div>
+    </div>
+</div>

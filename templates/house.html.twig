@@ -1,8 +1,7 @@
 {% extends 'front_layout.html.twig' %}
 
 {% block body %}
-    {{ dump(house) }}
-        <!-- Hero Section -->
+    <!-- Hero Section -->
     <div id="SVGHero" class="svg-preloader position-relative bg-img-hero" style="background-image: url({% path house.getMainPhoto, 'big' %});">
         <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
             <div class="w-md-65 w-lg-50">
@@ -192,194 +191,21 @@
         </div>
 
 
-        </div>
+
         <!-- End Description Section -->
 
         <!-- Stick Block End Point -->
         <div id="stickyBlockEndPoint"></div>
 
 
-        <!-- Sticky Block End Point -->
+
+    <!-- Sticky Block End Point -->
 {% include 'ant_web_bundle/house/house_pricing.html.twig' %}
 
-
-        <!-- Similar Properties Section -->
-        <div class="border-top pt-8 mt-8">
-            <!-- Title -->
-            <div class="mb-3">
-                <h2 class="h5">Другие проекты</h2>
-            </div>
-            <!-- End Title -->
-
-            <!-- Slick Carousel -->
-            <div class="js-slick-carousel u-slick u-slick-zoom u-slick--gutters-3"
-                 data-slides-show="3"
-                 data-arrows-classes="d-none d-lg-inline-block u-slick__arrow u-slick__arrow--flat u-slick__arrow-centered--y rounded-circle"
-                 data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-inner u-slick__arrow-inner--left ml-n2"
-                 data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-inner u-slick__arrow-inner--right mr-n2"
-                 data-pagi-classes="d-lg-none text-center u-slick__pagination mt-5 mb-0"
-                 data-responsive='[{
-               "breakpoint": 992,
-               "settings": {
-                 "slidesToShow": 2
-               }
-             }, {
-               "breakpoint": 768,
-               "settings": {
-                 "slidesToShow": 1
-               }
-             }]'>
-                <div class="js-slide card border-0 shadow-sm mb-3">
-                    <!-- House Items -->
-                    <div class="position-relative">
-                        <img class="card-img-top" src="../../assets/img/500x550/img14.jpg" alt="Image Description">
-                        <header class="position-absolute top-0 right-0 left-0 p-5">
-                            <a class="media align-items-center text-white" href="#">
-                                <div class="u-avatar mr-2">
-                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
-                                </div>
-                                <div class="media-body">
-                                    <span>Maria Muszynska</span>
-                                </div>
-                            </a>
-                        </header>
-                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                            <span class="h4 text-white">$455,000</span>
-                        </div>
-                    </div>
-
-                    <div class="card-body p-5">
-                        <h4 class="h6">
-                            <a href="#">Abbots Way, North Shields</a>
-                        </h4>
-                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                        <a class="text-secondary" href="#">London, England</a>
-                    </div>
-                    <!-- End House Items -->
-                </div>
-
-                <div class="js-slide card border-0 shadow-sm mb-3">
-                    <!-- House Items -->
-                    <div class="position-relative">
-                        <img class="card-img-top" src="../../assets/img/500x550/img15.jpg" alt="Image Description">
-                        <header class="position-absolute top-0 right-0 left-0 p-5">
-                            <a class="media align-items-center text-white" href="#">
-                                <div class="u-avatar mr-2">
-                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
-                                </div>
-                                <div class="media-body">
-                                    <span>Casy Williams</span>
-                                </div>
-                            </a>
-                        </header>
-                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                            <span class="h4 text-white">$750,000</span>
-                        </div>
-                    </div>
-
-                    <div class="card-body p-5">
-                        <h4 class="h6">
-                            <a href="#">Secluded Intown Treehouse</a>
-                        </h4>
-                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                        <a class="text-secondary" href="#">New York, US</a>
-                    </div>
-                    <!-- End House Items -->
-                </div>
-
-                <div class="js-slide card border-0 shadow-sm mb-3">
-                    <!-- House Items -->
-                    <div class="position-relative">
-                        <img class="card-img-top" src="../../assets/img/500x550/img16.jpg" alt="Image Description">
-                        <header class="position-absolute top-0 right-0 left-0 p-5">
-                            <a class="media align-items-center text-white" href="#">
-                                <div class="u-avatar mr-2">
-                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img3.jpg" alt="Image Description">
-                                </div>
-                                <div class="media-body">
-                                    <span>Chris Johnson</span>
-                                </div>
-                            </a>
-                        </header>
-                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                            <span class="h4 text-white">$173,000</span>
-                        </div>
-                    </div>
-
-                    <div class="card-body p-5">
-                        <h4 class="h6">
-                            <a href="#">Malibu Dream Airstream</a>
-                        </h4>
-                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                        <a class="text-secondary" href="#">Manhattan, US</a>
-                    </div>
-                    <!-- End House Items -->
-                </div>
-
-                <div class="js-slide card border-0 shadow-sm mb-3">
-                    <!-- House Items -->
-                    <div class="position-relative">
-                        <img class="card-img-top" src="../../assets/img/500x550/img17.jpg" alt="Image Description">
-                        <header class="position-absolute top-0 right-0 left-0 p-5">
-                            <a class="media align-items-center text-white" href="#">
-                                <div class="u-avatar mr-2">
-                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img4.jpg" alt="Image Description">
-                                </div>
-                                <div class="media-body">
-                                    <span>Elon Fisher</span>
-                                </div>
-                            </a>
-                        </header>
-                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                            <span class="h4 text-white">$199,000</span>
-                        </div>
-                    </div>
-
-                    <div class="card-body p-5">
-                        <h4 class="h6">
-                            <a href="#">Tintern Crescent</a>
-                        </h4>
-                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                        <a class="text-secondary" href="#">Toronto, Canada</a>
-                    </div>
-                    <!-- End House Items -->
-                </div>
-
-                <div class="js-slide card border-0 shadow-sm mb-3">
-                    <!-- House Items -->
-                    <div class="position-relative">
-                        <img class="card-img-top" src="../../assets/img/500x550/img18.jpg" alt="Image Description">
-                        <header class="position-absolute top-0 right-0 left-0 p-5">
-                            <a class="media align-items-center text-white" href="#">
-                                <div class="u-avatar mr-2">
-                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
-                                </div>
-                                <div class="media-body">
-                                    <span>Maria Muszynska</span>
-                                </div>
-                            </a>
-                        </header>
-                        <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                            <span class="h4 text-white">$376,000</span>
-                        </div>
-                    </div>
-
-                    <div class="card-body p-5">
-                        <h4 class="h6">
-                            <a href="#">Tiverton Avenue</a>
-                        </h4>
-                        <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                        <a class="text-secondary" href="#">Beijing, China</a>
-                    </div>
-                    <!-- End House Items -->
-                </div>
-            </div>
-            <!-- End Slick Carousel -->
-        </div>
-        <!-- End Similar Properties Section -->
+    {{ render(controller('App\\Controller\\HBDOMController:othersAction', {'id': house.id })) }}
 
     <!-- End Property Description Section -->
-
+    </div>
     <script>
         $(document).on('ready', function () {
             // initialization of slick carousel

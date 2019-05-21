@@ -14,3 +14,57 @@ hbdom:
   prefix:   /
   resource: App\Controller\HBDOMController
   type:     annotation
+
+
+ad_one:
+    path: /ad_one
+    defaults:
+        _controller: AntWebBundle:Ad:show
+        id: 1
+        adTemplate:    /ant_web_bundle/_ad_one.html.twig
+ad_two:
+    path: /ad_two
+    defaults:
+        _controller: AntWebBundle:Ad:show
+        id: 2
+        adTemplate:    /ant_web_bundle/technology/services_hero.html.twig
+
+technology_ad_two:
+    path: /technology_ad_two
+    defaults:
+        _controller: AntWebBundle:Ad:listOneGroup
+        id: 2
+        adGroupTemplate:    /ant_web_bundle/technology/technology_ad_two.html.twig
+
+technology_ad_three:
+    path: /technology_ad_three
+    defaults:
+        _controller: AntWebBundle:Ad:listOneGroup
+        id: 3
+        adGroupTemplate:    /ant_web_bundle/technology/technology_ad_two.html.twig
+
+technology_ad_five:
+    path: /technology_ad_five
+    defaults:
+        _controller: AntWebBundle:Ad:listOneGroup
+        id: 5
+        adGroupTemplate:    /ant_web_bundle/technology/technology_ad_two.html.twig
+
+technology_ad_six:
+    path: /technology_ad_six
+    defaults:
+        _controller: AntWebBundle:Ad:listOneGroup
+        id: 6
+        adGroupTemplate:    /ant_web_bundle/technology/technology_ad_two.html.twig
+
+services_ad_four:
+    path: /services_ad_four
+    defaults:
+        _controller: AntWebBundle:Ad:listOneGroup
+        id: 4
+        adGroupTemplate:    /ant_web_bundle/technology/_block_services.html.twig
+
+technology_pie:
+    path: /technology_pie
+    defaults:
+            _controller: AntWebBundle:Ad:Index

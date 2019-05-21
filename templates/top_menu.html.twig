@@ -7,9 +7,7 @@
                 data-animation-out="fadeOut"
                 data-position="left">
                 <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="{{ menuItem.uri}}" aria-haspopup="true" aria-expanded="false">{{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages'))  }}</a>
-{#                {% for child in menuItem.children %}#}
-{#                    {{ dump(child) }}#}
-{#                {% endfor %}#}
+
                 <!-- Home - Mega Menu -->
                 <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
                     <div class="row no-gutters">
@@ -29,60 +27,19 @@
 
                         <div class="col-lg-6">
                             <div class="row u-header__mega-menu-wrapper">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <span class="u-header__sub-menu-title">Classic</span>
                                     <ul class="u-header__sub-menu-nav-group mb-3">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="index.html">Classic Agency</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-business.html">Classic Business</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-marketing.html">Classic Marketing</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-consulting.html">Classic Consulting</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-start-up.html">Classic Start-up</a></li>
+                                    {% for child in menuItem.children %}
+                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="{{ child.uri }}">{{ child.label }}</a></li>
+                                    {% endfor %}
                                     </ul>
-
-                                    <span class="u-header__sub-menu-title">Corporate</span>
-                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-agency.html">Corporate Agency</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-start-up.html">Corporate Start-Up</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-business.html">Corporate Business</a></li>
-                                    </ul>
-
-                                    <span class="u-header__sub-menu-title">Portfolio</span>
-                                    <ul class="u-header__sub-menu-nav-group">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-agency.html">Portfolio Agency</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-profile.html">Portfolio Profile</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <span class="u-header__sub-menu-title">App</span>
-                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-saas.html">App SaaS <span class="badge badge-success badge-pill ml-1">New</span></a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-workflow.html">App Workflow <span class="badge badge-success badge-pill ml-1">New</span></a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-payment.html">App Payment</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="app-software.html">App Software</a></li>
-                                    </ul>
-
-                                    <span class="u-header__sub-menu-title">Onepages</span>
-                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-creative.html">Onepage Creative</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-saas.html">Onepage SaaS</a></li>
-                                    </ul>
-
-                                    <span class="u-header__sub-menu-title">Blog</span>
-                                    <ul class="u-header__sub-menu-nav-group">
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-agency.html">Blog Agency</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-start-up.html">Blog Start-Up</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-business.html">Blog Business</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
         {% else %}
-            <li class="nav-item u-header__nav-last-item">
-                <a class="btn btn-sm btn-white transition-3d-hover" href="{{ menuItem.uri}}">
+            <li class="nav-item u-header__nav-item">
+                <a class="u-header__nav-link" href="{{ menuItem.uri}}">
                     {{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages')) }}
                 </a>
             </li>

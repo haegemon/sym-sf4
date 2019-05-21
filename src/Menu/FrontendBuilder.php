@@ -46,10 +46,10 @@ class FrontendBuilder {
                 ->setExtra('translation_domain', 'AntWebBundle');
         }
         $menu
-            ->addChild('top_menu.services', array('route' => 'dom_services'))
+            ->addChild('top_menu.services', array('route' => 'ant_services'))
             ->setExtra('translation_domain', 'AntWebBundle');
         $menu
-            ->addChild('top_menu.technologies', array('route' => 'dom_technologies'))
+            ->addChild('top_menu.technologies', array('route' => 'ant_technology'))
             ->setExtra('translation_domain', 'AntWebBundle');
 
         return $menu;

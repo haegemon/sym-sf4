@@ -9,9 +9,15 @@
 
 namespace Ant\WebBundle\Entity;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class NewsRepository extends EntityRepository {
+class NewsRepository extends ServiceEntityRepository {
+
+    public function __construct(RegistryInterface $registry)
+    {
+        parent::__construct($registry, News::class);
+    }
 
     public function findAll(){
         return $this->findBy(array(), array('created'=>'DESC'));
@@ -19,8 +25,11 @@ class NewsRepository extends EntityRepository {
     }
 
     public function findOther($id){
-        $dql = "SELECT n FROM AntWebBundle:News n WHERE n.id != ?1 ORDER BY n.created DESC";
-        return $this->getEntityManager()->createQuery($dql)
+        $qb = $this->createQueryBuilder('n')
+            ->andWhere('n.id != ?1')
             ->setParameter(1, $id)
-            ->getResult();    }
+            ->getQuery();
+
+        return $qb->execute();
+        }
 }

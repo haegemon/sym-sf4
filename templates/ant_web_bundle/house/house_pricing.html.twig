@@ -1,313 +1,158 @@
 <!-- Pricing Section -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-5 mb-7 mb-lg-0">
-            <!-- Title -->
-            <div class="pr-lg-4 mb-7">
-                <span class="btn btn-xs btn-soft-success btn-pill mb-2">Pricing plans</span>
-                <h2>No additional costs.<br>Pay for what you use.</h2>
-                <p>Choose the most suitable service for your needs with reasonable price.</p>
-            </div>
-            <!-- End Title -->
+    <div class="mb-3">
+        <h2>Цены на каркасные дома</h2>
+        <p>Подберите подходящую комплектацию</p>
+    </div>
 
-            <!-- Button Group -->
-            <div class="btn-group btn-group-toggle">
-                <a class="js-animation-link btn btn-outline-secondary btn-custom-toggle-primary btn-sm-wide active" href="javascript:;"
-                   data-target="#pricingMonthlyExample1"
-                   data-link-group="idPricingExample1"
-                   data-animation-in="slideInUp">Monthly</a>
-                <a class="js-animation-link btn btn-outline-secondary btn-custom-toggle-primary btn-sm-wide" href="javascript:;"
-                   data-target="#pricingYearlyExample1"
-                   data-link-group="idPricingExample1"
-                   data-animation-in="slideInUp">
-                    Yearly
-                    <span class="badge badge-success badge-pill badge-bigger badge-pos">10% OFF</span>
-                </a>
+    <!-- Pricing Carousel -->
+    <div class="js-slick-carousel u-slick u-slick--gutters-2 mb-4"
+         data-adaptive-height="true"
+         data-slides-show="4"
+         data-slides-scroll="1"
+         data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0"
+         data-responsive='[{
+         "breakpoint": 1200,
+         "settings": {
+           "slidesToShow": 3
+         }
+       }, {
+         "breakpoint": 992,
+         "settings": {
+           "slidesToShow": 2
+         }
+       }, {
+         "breakpoint": 768,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }, {
+         "breakpoint": 554,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }]'>
+        <div class="js-slide">
+            <!-- Pricing -->
+            <div class="card transition-3d-hover">
+                <!-- Header -->
+                <header class="card-header text-center p-5">
+                    <h4 class="h6 text-primary mb-3">Базовый</h4>
+                    <span class="d-block">
+            <span class="display-4 text-dark font-weight-normal">
+              10<span class="align-top font-size-2">000 р.</span>
+            </span>
+            <span class="d-block text-secondary font-size-1">за кв м</span>
+          </span>
+                </header>
+                <!-- End Header -->
+
+                <!-- Content -->
+                <div class="card-body p-5">
+                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                        <li class="list-group-item">Community support</li>
+                        <li class="list-group-item">400+ pages</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Отправить заявку</button>
+                </div>
+                <!-- End Content -->
             </div>
-            <!-- End Button Group -->
+            <!-- End Pricing -->
         </div>
 
-        <div class="col-lg-7">
-            <!-- Monthly Plans -->
-            <div id="pricingMonthlyExample1" class="row align-items-center mb-3" data-target-group="idPricingExample1">
-                <div class="col-sm-6 mb-7 mb-sm-0">
-                    <!-- Pricing -->
-                    <div class="card border-0 shadow-sm">
-                        <header id="SVGwave1BottomShapeID1" class="svg-preloader card-header border-0 position-relative bg-primary text-white p-5 pb-11">
-                            <h3 class="h4 mb-1">Individual Plan</h3>
-                            <span class="d-block">
-                <span class="align-top">$</span>
-                <span class="display-4 font-weight-semi-bold">22</span>
-                <span>/month</span>
-              </span>
+        <div class="js-slide">
+            <!-- Pricing -->
+            <div class="card transition-3d-hover">
+                <!-- Header -->
+                <header class="card-header text-center p-5">
+                    <h4 class="h6 text-warning mb-3">Летний</h4>
+                    <span class="d-block">
+            <span class="display-4 text-dark font-weight-normal">
+              12<span class="align-top font-size-2">000 р.</span>
+            </span>
+            <span class="d-block text-secondary font-size-1">за кв м</span>
+          </span>
+                </header>
+                <!-- End Header -->
 
-                            <div class="position-absolute right-0 bottom-0 left-0">
-                                <figure class="ie-wave-1-bottom">
-                                    <img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-1-bottom.svg') }}" alt="Image Description"
-                                         data-parent="#SVGwave1BottomShapeID1">
-                                </figure>
-                            </div>
-                        </header>
+                <!-- Content -->
+                <div class="card-body p-5">
+                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                        <li class="list-group-item">Community support</li>
+                        <li class="list-group-item">400+ pages</li>
+                        <li class="list-group-item">100+ header variations</li>
+                    </ul>
 
-                        <!-- Content -->
-                        <div class="card-body pt-0 px-5 pb-5">
-                            <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        Community support
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        400+ pages
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        100+ header variations
-                                    </div>
-                                </li>
-                                <li class="list-group-item disabled py-2">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        20+ home page options
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Get Started</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
+                    <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Отправить заявку</button>
                 </div>
-
-                <div class="col-sm-6">
-                    <!-- Pricing -->
-                    <div class="card border-0 shadow-sm">
-                        <header id="SVGwave1BottomShapeID2" class="svg-preloader card-header border-0 position-relative bg-primary text-white p-5 pb-11">
-                            <h3 class="h4 mb-1">Enterprise Plan</h3>
-                            <span class="d-block">
-                <span class="align-top">$</span>
-                <span class="display-4 font-weight-semi-bold">99</span>
-                <span>/month</span>
-              </span>
-
-                            <div class="position-absolute right-0 bottom-0 left-0">
-                                <figure class="ie-wave-1-bottom">
-                                    <img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-1-bottom.svg') }}" alt="Image Description"
-                                         data-parent="#SVGwave1BottomShapeID2">
-                                </figure>
-                            </div>
-                        </header>
-
-                        <!-- Content -->
-                        <div class="card-body pt-0 px-5 pb-5">
-                            <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        24/7 support
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        400+ pages
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        200+ header variations
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        40+ home page options
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        E-commerce
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Get Started</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
-                </div>
+                <!-- End Content -->
             </div>
-            <!-- End Monthly Plans -->
+            <!-- End Pricing -->
+        </div>
 
-            <!-- Yearly Plans -->
-            <div id="pricingYearlyExample1" class="row align-items-center mb-3" style="display: none; opacity: 0;" data-target-group="idPricingExample1">
-                <div class="col-sm-6 mb-7 mb-sm-0">
-                    <!-- Pricing -->
-                    <div class="card border-0 shadow-sm">
-                        <header id="SVGwave1BottomShapeID3" class="svg-preloader card-header border-0 position-relative bg-primary text-white p-5 pb-11">
-                            <h3 class="h4 mb-1">Individual Plan</h3>
-                            <span class="d-block">
-                <span class="align-top">$</span>
-                <span class="display-4 font-weight-semi-bold">242</span>
-                <span>/year</span>
-              </span>
+        <div class="js-slide">
+            <!-- Pricing -->
+            <div class="card transition-3d-hover">
+                <!-- Header -->
+                <header class="card-header text-center p-5">
+                    <h4 class="h6 text-success mb-3">Зимний</h4>
+                    <span class="d-block">
+            <span class="display-4 text-dark font-weight-normal">
+              15<span class="align-top font-size-3">000 р.</span>
+            </span>
+            <span class="d-block text-secondary font-size-1">за кв.м.</span>
+          </span>
+                </header>
+                <!-- End Header -->
 
-                            <div class="position-absolute right-0 bottom-0 left-0">
-                                <figure class="ie-wave-1-bottom">
-                                    <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom.svg" alt="Image Description"
-                                         data-parent="#SVGwave1BottomShapeID3">
-                                </figure>
-                            </div>
-                        </header>
+                <!-- Content -->
+                <div class="card-body p-5">
+                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                        <li class="list-group-item">Community support</li>
+                        <li class="list-group-item">400+ pages</li>
+                        <li class="list-group-item">100+ header variations</li>
+                        <li class="list-group-item">20+ home page options</li>
+                    </ul>
 
-                        <!-- Content -->
-                        <div class="card-body pt-0 px-5 pb-5">
-                            <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        24/7 support
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        400+ pages
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        100+ header variations
-                                    </div>
-                                </li>
-                                <li class="list-group-item disabled py-2">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        20+ home page options
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Get Started</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
+                    <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Start Free Trial</button>
                 </div>
-
-                <div class="col-sm-6">
-                    <!-- Pricing -->
-                    <div class="card border-0 shadow-sm">
-                        <header id="SVGwave1BottomShapeID4" class="svg-preloader card-header border-0 position-relative bg-primary text-white p-5 pb-11">
-                            <h3 class="h4 mb-1">Enterprise Plan</h3>
-                            <span class="d-block">
-                <span class="align-top">$</span>
-                <span class="display-4 font-weight-semi-bold">1089</span>
-                <span>/year</span>
-              </span>
-
-                            <div class="position-absolute right-0 bottom-0 left-0">
-                                <figure class="ie-wave-1-bottom">
-                                    <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom.svg" alt="Image Description"
-                                         data-parent="#SVGwave1BottomShapeID4">
-                                </figure>
-                            </div>
-                        </header>
-
-                        <!-- Content -->
-                        <div class="card-body pt-0 px-5 pb-5">
-                            <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        24/7 support
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        400+ pages
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        200+ header variations
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        40+ home page options
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                    <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
-                      <span class="fas fa-check btn-icon__inner"></span>
-                    </span>
-                                        E-commerce
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover">Get Started</button>
-                        </div>
-                        <!-- End Content -->
-                    </div>
-                    <!-- End Pricing -->
-                </div>
+                <!-- End Content -->
             </div>
-            <!-- End Yearly Plans -->
+            <!-- End Pricing -->
+        </div>
 
-            <p class="small text-muted text-center">
-                * <a class="link-muted" href="../pages/terms.html">Terms</a> are subject to change.
-            </p>
+        <div class="js-slide">
+            <!-- Pricing -->
+            <div class="card transition-3d-hover">
+                <!-- Header -->
+                <header class="card-header text-center p-5">
+                    <h4 class="h6 text-danger mb-3">Индивидуальный</h4>
+                    <span class="d-block">
+            <span class="h2 text-dark font-weight-normal">
+              Свяжитесь с нами
+            </span>
+          </span>
+                </header>
+                <!-- End Header -->
+
+                <!-- Content -->
+                <div class="card-body p-5">
+                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                        <li class="list-group-item">Community support</li>
+                        <li class="list-group-item">400+ pages</li>
+                        <li class="list-group-item">100+ header variations</li>
+                        <li class="list-group-item">20+ home page options</li>
+                        <li class="list-group-item">Priority Support</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-sm btn-block btn-warning transition-3d-hover">Рассчитать</button>
+                </div>
+                <!-- End Content -->
+            </div>
+            <!-- End Pricing -->
         </div>
     </div>
+    <!-- End Pricing Carousel -->
 </div>
 <!-- End Pricing Section -->
