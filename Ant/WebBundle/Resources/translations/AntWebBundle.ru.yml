@@ -122,3 +122,14 @@ top_menu:
   houses: Каркасные дома
   services: Услуги
   technologies: Как мы строим?
+testimonial:
+  all: Отзывы
+  title: Имя
+  text: Текст
+  created: Время создания
+  updated: Последнее обновление
+  id: ID
+  list:  Новости
+  read:  Подробнее
+  back:  Назад
+  photo: Фото
