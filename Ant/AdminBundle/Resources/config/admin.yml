@@ -46,6 +46,15 @@ services:
             - {name: sonata.admin, manager_type: orm, group: "content",  label: "testimonial.all", label_catalogue: "AntWebBundle"}
         calls:
             - [ setTranslationDomain, [AntWebBundle]]
+            - [ setTranslationDomain, [AntWebBundle]]
+
+    ant.admin.staff:
+        class: Ant\AdminBundle\Admin\StaffAdmin
+        arguments: [~, App\Entity\Staff , ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "content",  label: "staff.all", label_catalogue: "AntWebBundle"}
+        calls:
+            - [ setTranslationDomain, [AntWebBundle]]
 
     ant.admin.order_form:
         class: Ant\AdminBundle\Admin\OrderFormAdmin

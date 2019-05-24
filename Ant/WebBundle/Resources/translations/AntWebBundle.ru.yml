@@ -133,3 +133,15 @@ testimonial:
   read:  Подробнее
   back:  Назад
   photo: Фото
+staff:
+  all: Команда
+  fullName: ФИО
+  position: Должность
+  description: описание
+  created: Время создания
+  updated: Последнее обновление
+  id: ID
+  list:  Новости
+  read:  Подробнее
+  back:  Назад
+  photo: Фото

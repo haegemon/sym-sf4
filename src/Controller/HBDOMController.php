@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\House;
+use App\Entity\Staff;
 use App\Entity\Testimonial;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -134,6 +135,17 @@ class HBDOMController extends AbstractController
 
         return $this->render('testimonials.html.twig', array(
             'testimonials' => $testimonials,
+        ));
+    }
+
+    public function teamAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $staffs = $em->getRepository(Staff::class)->findAll();
+
+        return $this->render('team.html.twig', array(
+            'staffs' => $staffs,
         ));
     }
 }
