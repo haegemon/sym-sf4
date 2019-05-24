@@ -21,7 +21,7 @@
                     <!-- Review -->
                     <div class="d-flex align-items-center">
                         <ul class="list-inline mr-3 mb-0">
-                            <li class="list-inline-item text-warning">
+                            <li class="list-inline-item text-primary">
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
@@ -65,7 +65,7 @@
 
                             <div class="media ml-6">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle" src="{% path testimonial.photo.media, 'small' %}" alt="Testimonial Description">
+                                    <img class="img-fluid rounded-circle" src="{% path testimonial.photo, 'small' %}" alt="Testimonial Description">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="h6 mb-0">{{ testimonial.title }}</h4>
@@ -82,7 +82,7 @@
     <!-- SVG Bottom Right Shapes -->
     <div class="position-absolute top-0 right-0 w-75 w-md-60 w-lg-35">
         <figure class="ie-double-ellipse-top-right">
-            <img class="js-svg-injector" src="../../assets/svg/components/double-ellipse-top-right.svg" alt="Image Description"
+            <img class="js-svg-injector" src="{{ asset('assets/svg/components/double-ellipse-top-right.svg') }}" alt="Image Description"
                  data-parent="#SVGdoubleEllipseTopRight">
         </figure>
     </div>

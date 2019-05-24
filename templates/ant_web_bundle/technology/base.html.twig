@@ -18,16 +18,24 @@
     </div>
     <!-- End Hero Section -->
     {%  include ('ant_web_bundle/technology/_pie.html.twig') %}
-
     {#{{ render(url('technology_pie')) }}#}
-
-
     {{ render(url('technology_ad_two')) }}
     {{ render(url('technology_ad_three')) }}
     {{ render(url('technology_ad_five')) }}
     {{ render(url('technology_ad_six')) }}
-
+    <div class="m-8 text-center">
+        <h2>Почему мы?</h2>
+        <p>Преимущества работы с HBDome</p>
+    </div>
     {%  include ('ant_web_bundle/technology/_benefits.html.twig') %}
+    <div class="m-8 text-center">
+        <h2>Команда</h2>
+        <p>Работаем для Вас</p>
+    </div>
+<div class="m-8">
+    {%  include ('ant_web_bundle/technology/_team.html.twig') %}
+</div>
+
 
 
 {% endblock %}

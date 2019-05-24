@@ -65,7 +65,17 @@ class OrderFormType extends AbstractType
                 'translation_domain' => 'AntWebBundle'
 
             ])
-            ->add('captcha', CaptchaType::class);
+            ->add('captcha', CaptchaType::class, array(
+                'width' => 120,
+                'height' => 60,
+                'reload' => true,
+                'as_url'=>true,
+                'quality'=>80,
+                'max_front_lines'=>0,
+                'max_behind_lines'=>0,
+                'length'=>3,
+                'distortion'=>false,
+    ));
         ;
     }
     

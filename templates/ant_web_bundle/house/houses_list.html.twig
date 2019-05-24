@@ -1,0 +1,19 @@
+{% extends 'front_layout.html.twig' %}
+{% block body %}
+    <div class="container space-2 space-lg-3">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
+            <h2 class="font-weight-medium">Проекты каркасных домов</h2>
+        </div>
+        <!-- End Title -->
+        <!-- Card Columns -->
+        <div class="card-sm-columns card-sm-2-count card-lg-3-count">
+            {% for house in houses %}
+            <div class="card mb-3">
+            {% include 'ant_web_bundle/house/_house_card.html.twig' %}
+            </div>
+            {% endfor %}
+        </div>
+        <!-- End Card Columns -->
+    </div>
+{% endblock %}

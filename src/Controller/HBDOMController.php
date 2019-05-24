@@ -27,10 +27,10 @@ class HBDOMController extends AbstractController
         $houses = $em->getRepository(House::class)->findBy(
             [],
             ['id' => 'DESC'],
-            3
+            5
         );
 
-        return $this->render('index.html.twig', array(
+        return $this->render('base.html.twig', array(
             'houses' => $houses,
         ));
     }
@@ -49,7 +49,7 @@ class HBDOMController extends AbstractController
             30
         );
 
-        return $this->render('houses_list.html.twig', array(
+        return $this->render('ant_web_bundle/house/houses_list.html.twig', array(
             'houses' => $houses,
         ));
     }
@@ -87,7 +87,7 @@ class HBDOMController extends AbstractController
             3
         );
 
-        return $this->render('index.html.twig', array(
+        return $this->render('base.html.twig', array(
             'houses' => $houses,
         ));
     }
@@ -106,7 +106,7 @@ class HBDOMController extends AbstractController
             3
         );
 
-        return $this->render('index.html.twig', array(
+        return $this->render('base.html.twig', array(
             'houses' => $houses,
         ));
     }

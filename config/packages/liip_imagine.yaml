@@ -23,3 +23,47 @@ liip_imagine:
             #            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
             filters:
                 thumbnail: { size: [500, 300], mode: outbound }
+
+        default_hero_extra:
+            quality: 90
+            filters:
+                upscale:
+                    min: [1920, 1080]
+
+        default_hero_square:
+             quality:
+             filters:
+                upscale:
+                    min: [1920, 1080]
+                thumbnail: { size: [750, 750] }
+
+        default_house_thumb_small:
+            quality: 90
+            filters:
+                thumbnail: { size: [200, 150]}
+
+        default_house_thumb_big:
+            quality: 90
+            filters:
+                thumbnail: { size: [500, 550]}
+
+        default_house_gallery_plan:
+            quality: 90
+            filters:
+                upscale:
+                    min: [1545, 550]
+
+        default_house_gallery:
+            quality: 90
+            filters:
+                thumbnail: {size: [700, 800]}
+
+        default_services_thumb:
+            quality: 90
+            filters:
+                thumbnail: {size: [350, 170]}
+
+        default_technology_thumb:
+            quality: 90
+            filters:
+                thumbnail: {size: [475, 500]}

@@ -49,7 +49,7 @@ class OrderFormController extends AbstractController
         }
 
 
-        return $this->render('AntWebBundle:OrderForm:new.html.twig', [
+        return $this->render('ant_web_bundle/new_order.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -87,7 +87,7 @@ class OrderFormController extends AbstractController
         $entity = new OrderForm();
         $form = $this->createCreateForm(new OrderForm());
 
-        return $this->render('AntWebBundle:OrderForm:new.html.twig', array(
+        return $this->render('ant_web_bundle/new_order.html.twig', array(
             'form' => $form->createView(),
         ));
     }

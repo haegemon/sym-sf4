@@ -5,18 +5,31 @@
 
 {% endblock %}
 {% block body %}
-   {#{%  include ('ant_web_bundle/technology/services_hero.html.twig') %}#}
+   {#{%  include ('ant_web_bundle/ad/_ad_three.html.twig') %}#}
     {{ render(url('ad_two')) }}
+
+    <div class="m-8 text-center">
+        <h2>Построим для Вас</h2>
+        <p>Выберите подходящий объект</p>
+    </div>
     {{ render(url('services_ad_four')) }}
-    {% include ('ant_web_bundle/technology/_gallery.html.twig') %}
+    <div class="m-8 text-center">
+        <h2>Портфолио</h2>
+        <p>Готовые объекты</p>
+    </div>
+    <div class="m-8">
+    {{ render(url('services_gallery')) }}
+    </div>
 
 {% endblock %}
 {% block javascripts_front %}
 {{ parent () }}
    <!-- JS Implementing Plugins -->
    <script src="{{ asset('assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js')}}"></script>
+    <script src="{{ asset('assets/js/helpers/hs.slick-carousel.js')}}"></script>
 
-   <!-- JS Implementing Plugins -->
+
+    <!-- JS Implementing Plugins -->
    <script src="{{ asset('assets/js/components/hs.cubeportfolio.js')}}"></script>
 
    <!-- JS Plugins Init. -->

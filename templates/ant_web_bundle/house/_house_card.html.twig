@@ -1,0 +1,44 @@
+    <a class="js-fancybox u-media-viewer" href="{{ path('house_page', {'url':house.url}) }}">
+        <img class="card-img-top w-100" src="{% path house.mainPhoto, 'house_thumb_big' %}" alt="{{ house.title }}">
+        <div class="position-absolute bottom-0 left-0 right-0 pb-2 px-3">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-8">
+                    <h2 class="h5 text-white mb-0">{{ (house.price)| number_format(0,',',' ') }} р.</h2>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="card-body p-4">
+        <p class="font-size-1 mb-1">{{ house.title }}</p>
+        {#<div class="d-block mb-3">#}
+        {#<span class="font-weight-medium">{{ (house.price)| number_format(0,',',' ') }} р.</span>#}
+        {#</div>#}
+        <!-- Icon Blocks -->
+        <ul class="list-inline font-size-1">
+            <li class="list-inline-item mr-4">
+                <span class="fas fa-warehouse text-muted mr-1"></span>
+                {{ house.floorCount }}
+            </li>
+            <li class="list-inline-item mr-4" title="{{ house.bedroomCount }} bedroom">
+                <span class="fas fa-bed text-muted mr-1"></span>
+                {{ house.bedroomCount }}
+            </li>
+            <li class="list-inline-item mr-4" title=" {{ house.bathroomCount }} bathroom">
+                <span class="fas fa-bath text-muted mr-1"></span>
+                {{ house.bathroomCount }}
+            </li>
+            <li class="list-inline-item mr-4" title="square feet">
+                <span class="fas fa-ruler-combined text-muted mr-1"></span>
+                {{ house.size }} кв. м.
+            </li>
+        </ul>
+        <!-- End Icon Blocks -->
+        <!-- Contacts -->
+        <div class="d-flex align-items-center font-size-1">
+            <a class="btn btn-sm btn-soft-primary transition-3d-hover ml-auto" href="{{ path('house_page', {'url':house.url}) }}">
+                Подробнее
+                <span class="fas fa-angle-right ml-1"></span>
+            </a>
+        </div>
+        <!-- End Contacts -->
+    </div>

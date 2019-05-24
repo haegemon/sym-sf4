@@ -1,0 +1,120 @@
+{% extends 'front_layout.html.twig' %}
+{% block body %}
+    {% trans_default_domain "AntWebBundle" %}
+    <!-- Hero Section -->
+    <div id="SVGwave1BottomSMShape" class="svg-preloader position-relative bg-light overflow-hidden m-8">
+        <div class="container space-3">
+            <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <h1 class="display-4 font-size-md-down-5 text-primary"> {{ 'order.new'|trans({}, 'AntWebBundle') }}</h1>
+                <p class="lead"></p>
+            </div>
+        </div>
+        <!-- SVG Background -->
+        <figure class="position-absolute right-0 bottom-0 left-0">
+            <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+                 data-parent="#SVGwave1BottomSMShape">
+        </figure>
+        <!-- End SVG Background Section -->
+    </div>
+    <!-- End Hero Section -->
+      <div class="container" id="main">
+        <div class="row">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success">
+                    {{ flashMessage|trans }}
+                </div>
+            {% endfor %}
+            <div class="col-sm-6 mb-6">
+                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    {{ form_label(form.name, null, {'label_attr': {'class': 'control-label form-label'}}) }}
+                    {{ form_widget(form.name,  {'attr': {'class': 'form-control'}}) }}
+                    <div class="alert-danger">
+                        {{ form_errors(form.name) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-6">
+                <div class="form-group">
+                    {{ form_label(form.surname, null, {'label_attr': {'class': 'control-label form-label'}}) }}
+                    {{ form_widget(form.surname,  {'attr': {'class': 'form-control'}}) }}
+                    <div class="alert-danger">
+                        {{ form_errors(form.surname) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-6">
+                <div class="form-group">
+                    {{ form_label(form.phone, null, {'label_attr': {'class': 'control-label form-label'}}) }}
+                    {{ form_widget(form.phone,  {'attr': {'class': 'form-control'}}) }}
+                    <div class="alert-danger">
+                        {{ form_errors(form.phone) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-6">
+                <div class="form-group">
+                    {{ form_label(form.email, null, {'label_attr': {'class': 'control-label form-label'}}) }}
+                    {{ form_widget(form.email,  {'attr': {'class': 'form-control'}}) }}
+                    <div class="alert-danger">
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="js-form-message mb-6">
+            <div class="form-group">
+                {{ form_label(form.text, null, {'label_attr': {'class': 'control-label form-label'}}) }}
+                {{ form_widget(form.text,  {'attr': {'class': 'form-control'}}) }}
+                <div class="alert-danger">
+                    {{ form_errors(form.text) }}
+                </div>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="hidden js-form-message mb-3">
+            <div class="mb-6">
+                {{ form_label(form.agreement, 'Подтвердите согласие на обработку персональных данных:', {'label_attr': {'class': 'control-label form-label '}}) }}
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                {% set terms_link %}
+                    <a title="Соглашение об обработке Персональных данных" href="" data-toggle="modal" data-target="#myModal" class="link-muted">
+                        Соглашение об обработке Персональных данных
+                    </a>
+                {% endset %}
+                {% set general_terms_and_conditions %}
+                        {{ 'Я прочитал и принимаю %general_terms_and_conditions%.'|trans({ '%general_terms_and_conditions%': terms_link })|raw }}
+                {% endset %}
+                {{ form_widget(form.agreement,  {'attr': {'class': 'form-control custom-control-input'} }) }}
+                <label for="{{ form.agreement.vars.id }}" class="custom-control-label"><small>{{ general_terms_and_conditions|raw }}</small></label>
+                <!-- Modal -->
+                {{ include('AntWebBundle:OrderForm:agreement.html.twig') }}
+            </div>
+            {% if form_errors(form.agreement) %}
+                <div class="alert-danger row">
+                    {{ form_errors(form.agreement) }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group media align-items-center mb-4">
+            <div class="mr-6">
+                {{ form_label(form.captcha, 'Введите код с картинки', {'label_attr': {'class': 'mb-0 form-label'}}) }}
+            </div>
+            <div class="d-flex align-items-center">
+                {{ form_widget(form.captcha,  {'attr': {'class': 'form-control mb-0 ml-3'}}) }}
+            </div>
+        </div>
+        {% if form_errors(form.captcha) %}
+            <div class="alert-danger row">
+                {{ form_errors(form.captcha) }}
+            </div>
+        {% endif %}
+        <div class="form-group mb-6">
+            <div class="text-center">
+                {{ form_widget(form.submit,  { 'label': 'Отправить заявку' , 'attr': {'class': 'btn btn-primary btn-wide transition-3d-hover mb-4'}}) }}
+                <p class="small">We'll get back to you in 1-2 business days.</p>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

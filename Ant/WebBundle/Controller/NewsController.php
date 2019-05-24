@@ -34,7 +34,7 @@ class NewsController extends AbstractController
             2/*limit per page*/
         );
 
-        return $this->render('AntWebBundle:News:index.html.twig', array(
+        return $this->render('AntWebBundle:News:base.html.twig', array(
             'entities' => $entities,
             'pagination' => $pagination
         ));

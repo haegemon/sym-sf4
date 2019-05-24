@@ -1,24 +1,21 @@
 {% extends 'front_layout.html.twig' %}
 
 {% block body %}
-    <!-- Hero Section -->
-    <div id="SVGHero" class="svg-preloader position-relative bg-img-hero" style="background-image: url({% path house.getMainPhoto, 'big' %});">
-        <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
-            <div class="w-md-65 w-lg-50">
-                <h1>You're in good company.</h1>
-                <h2 class="h1 text-primary font-weight-medium">Join millions of businesses on Front.</h2>
-            </div>
-        </div>
-
-        <!-- SVG Background -->
-        <figure class="position-absolute right-0 bottom-0 left-0">
-            <img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-9-bottom.svg') }}" alt="Image Description"
-                 data-parent="#SVGHero">
-        </figure>
-        <!-- End SVG Background -->
-    </div>
-    <!-- End Hero Section -->
-
+    {#<!-- Hero Section -->#}
+    {#<div id="SVGHero" class="svg-preloader position-relative bg-img-hero" style="background-image: url({% path house.getMainPhoto, 'big' %});">#}
+        {#<div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">#}
+            {#<div class="w-md-65 w-lg-50">#}
+                {#<h1>{{ house.title }}</h1>#}
+            {#</div>#}
+        {#</div>#}
+        {#<!-- SVG Background -->#}
+        {#<figure class="position-absolute right-0 bottom-0 left-0">#}
+            {#<img class="js-svg-injector" src="{{ asset('assets/svg/components/wave-9-bottom.svg') }}" alt="Image Description"#}
+                 {#data-parent="#SVGHero">#}
+        {#</figure>#}
+        {#<!-- End SVG Background -->#}
+    {#</div>#}
+    {#<!-- End Hero Section -->#}
         <!-- Property Description Section -->
     <div class="container space-bottom-2">
         <!-- Additional Functions -->
@@ -30,7 +27,6 @@
             </a>
         </div>
         <!-- End Additional Functions -->
-
         <!-- Title -->
         <div class="row justify-content-lg-between">
             <div class="col-lg-8">
@@ -40,18 +36,15 @@
                         <li class="breadcrumb-item"><a href="#">Главная</a></li>
                         <li class="breadcrumb-item"><a href="#">Дома</a></li>
                         <li class="breadcrumb-item"><a href="#">{{ house.title }}</a></li>
-
                     </ol>
                 </nav>
                 <!-- End Breadcrumb -->
             </div>
-
             <div class="col-lg-4 align-self-lg-end text-lg-right mb-5 mb-lg-0">
                 <span class="h3 text-primary font-weight-medium">{{ (house.price)| number_format(0,',',' ') }} р.</span>
             </div>
         </div>
         <!-- End Title -->
-
         <div class="row space-top-2">
             <div id="stickyBlockStartPoint" class="col-lg-5 mb-9 mb-lg-0">
                 <!-- Sticky Block -->
@@ -91,7 +84,6 @@
 
                 </ul>
                 <!-- End Nav Classic -->
-
                 <!-- Tab Content -->
                 <div class="tab-content">
                     <div class="tab-pane fade pt-6 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
@@ -100,7 +92,6 @@
                             <h2 class="h5">Описание</h2>
                         </div>
                         <!-- End Title -->
-
                         <!-- Key Facts -->
                         <div class="row">
                             <div class="col-md-6">
@@ -131,46 +122,37 @@
 
                         </div>
                         <!-- End Key Facts -->
-
-                                            <!-- Title -->
+                        <!-- Title -->
                         <div class="mb-3">
                             <h3 class="h5">Описание дома</h3>
                         </div>
                         <!-- End Title -->
-
                         {{ house.description }}
                         <!-- Collapse Link - Content -->
-                        <div class="collapse" id="collapseLinkExample">
-                            <h4 class="h6">Directions</h4>
-
-                            <p>Proceed up the Otley Road from the Prince Of Wales roundabout and through the traffic lights with the turning into Harlow Moor Road. Continue ahead where the property can be found on the left hand side.</p>
-
-                            <h4 class="h6">Strictly by appointment through Front House</h4>
-
-                            <p>You may download, store and use the material for your own personal use and research. You may not republish, retransmit, redistribute or otherwise make the material available to any party or make the same available on any website, online service or bulletin board of your own or of any other party or make the same available in hard copy or in any other media without the website owner's express prior written consent. The website owner's copyright must remain on all reproductions of material taken from this website.</p>
-                        </div>
-                        <!-- End Collapse Link - Content -->
-
-                        <!-- Collapse Link -->
-                        <a class="link-collapse" data-toggle="collapse" href="#collapseLinkExample" role="button" aria-expanded="false" aria-controls="collapseLinkExample">
-                            <span class="link-collapse__default">Больше</span>
-                            <span class="link-collapse__active">Свернуть</span>
-                        </a>
-                        <!-- End Collapse Link -->
-
+                        {#<div class="collapse" id="collapseLinkExample">#}
+                            {#<h4 class="h6">Directions</h4>#}
+                            {#<p>Proceed up the Otley Road from the Prince Of Wales roundabout and through the traffic lights with the turning into Harlow Moor Road. Continue ahead where the property can be found on the left hand side.</p>#}
+                            {#<h4 class="h6">Strictly by appointment through Front House</h4>#}
+                            {#<p>You may download, store and use the material for your own personal use and research. You may not republish, retransmit, redistribute or otherwise make the material available to any party or make the same available on any website, online service or bulletin board of your own or of any other party or make the same available in hard copy or in any other media without the website owner's express prior written consent. The website owner's copyright must remain on all reproductions of material taken from this website.</p>#}
+                        {#</div>#}
+                        {#<!-- End Collapse Link - Content -->#}
+                        {#<!-- Collapse Link -->#}
+                        {#<a class="link-collapse" data-toggle="collapse" href="#collapseLinkExample" role="button" aria-expanded="false" aria-controls="collapseLinkExample">#}
+                            {#<span class="link-collapse__default">Больше</span>#}
+                            {#<span class="link-collapse__active">Свернуть</span>#}
+                        {#</a>#}
+                        {#<!-- End Collapse Link -->#}
                     </div>
-
                     <div class="tab-pane fade pt-6" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
                         <!-- Gallery Plan -->
-
                         {% for galleryHasMedia in house.planGallery.galleryHasMedias %}
                         <a class="js-fancybox u-media-viewer" href="javascript:;"
-                           data-src="{% path galleryHasMedia.media, 'big' %}"
+                           data-src="{% path galleryHasMedia.media, 'house_gallery_plan' %}"
                            data-fancybox="fancyboxGalleryFloorPlan"
                            data-caption="Floorplan image #01"
                            data-speed="700"
                            data-is-infinite="true">
-                            <img class="img-fluid" src="{% path galleryHasMedia.media, 'small' %}" alt="Image Description">
+                            <img class="img-fluid" src="{% path galleryHasMedia.media, 'house_gallery_plan' %}" alt="Image Description">
                         </a>
                         <!-- End Gallery Plan-->
                         {% endfor %}
@@ -179,31 +161,20 @@
                 <!-- End Tab Content -->
                 </div>
             </div>
-
             <div class="col-lg-7">
                 {% for galleryHasMedia in house.gallery.GalleryHasMedias %}
                 <div class="mb-5">
-                    <img class="img-fluid rounded" src="{% path galleryHasMedia.media, 'gallery' %}" alt="Image Description">
+                    <img class="img-fluid rounded" src="{% path galleryHasMedia.media, 'house_gallery' %}" alt="Image Description">
                 </div>
                 {% endfor %}
             </div>
-
         </div>
-
-
-
         <!-- End Description Section -->
-
         <!-- Stick Block End Point -->
         <div id="stickyBlockEndPoint"></div>
-
-
-
     <!-- Sticky Block End Point -->
 {% include 'ant_web_bundle/house/house_pricing.html.twig' %}
-
     {{ render(controller('App\\Controller\\HBDOMController:othersAction', {'id': house.id })) }}
-
     <!-- End Property Description Section -->
     </div>
     <script>
@@ -212,6 +183,4 @@
             $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
         });
     </script>
-
-
 {% endblock %}

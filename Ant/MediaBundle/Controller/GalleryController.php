@@ -25,7 +25,7 @@ class GalleryController extends AbstractController
             'enabled' => true
         ));
 
-        return $this->render('AntMediaBundle:Gallery:index.html.twig', array(
+        return $this->render('AntMediaBundle:Gallery:base.html.twig', array(
             'galleries'   => $galleries,
         ));
     }
@@ -75,6 +75,29 @@ class GalleryController extends AbstractController
             'gallery'   => $gallery,
         ));
     }
+
+    /**
+     * @param string $id
+     *
+     * @return \Symfony\Bundle\FrameworkBundle\Controller\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     */
+    public function customViewAction($id, $galleryTemplate)
+    {
+        $gallery = $this->get('sonata.media.manager.gallery')->findOneBy(array(
+            'id'      => $id,
+            'enabled' => true
+        ));
+
+        if (!$gallery) {
+            throw new NotFoundHttpException('unable to find the gallery with the id');
+        }
+
+        return $this->render($galleryTemplate, array(
+            'gallery'   => $gallery,
+        ));
+    }
+
 
     public function thumbAction($id)
     {

@@ -1,6 +1,3 @@
-{% for house in houses %}
-    {{ house.title }}
-{% endfor %}
 <!-- Similar Properties Section -->
 <div class="border-top pt-8 mt-8">
     <!-- Title -->
@@ -8,7 +5,6 @@
         <h2 class="h5">Другие проекты</h2>
     </div>
     <!-- End Title -->
-
     <!-- Slick Carousel -->
     <div class="js-slick-carousel u-slick u-slick-zoom u-slick--gutters-3"
          data-slides-show="3"
@@ -28,28 +24,42 @@
                }
              }]'>
         {% for house in houses %}
-
-        <div class="js-slide card border-0 shadow-sm mb-3">
+            <div class="js-slide card border-0 shadow-sm mb-3">
+            {#{% include 'ant_web_bundle/house/_house_card.html.twig' %}#}
             <!-- House Items -->
             <div class="position-relative">
-                <img class="card-img-top" src="{% path house.mainPhoto, 'big' %}" alt="{{ house.title }}">
+                <img class="card-img-top" src="{% path house.mainPhoto, 'house_thumb_big' %}" alt="{{ house.title }}">
                 <header class="position-absolute top-0 right-0 left-0 p-5">
-
                 </header>
                 <div class="position-absolute right-0 bottom-0 left-0 p-5">
-                    <span class="h4 text-white">{{ house.price }} р.</span>
+                    <span class="h4 text-white">{{ (house.price)| number_format(0,',',' ') }} р.</span>
                 </div>
             </div>
 
-            <div class="card-body p-5">
-                <h4 class="h6">
-                    <a href="#">{{ house.title }}</a>
-                </h4>
-                <span class="fas fa-map-marker-alt text-danger mr-2"></span>
-                <a class="text-secondary" href="#">London, England</a>
-            </div>
-            <!-- End House Items -->
-        </div>
+                <div class="card-body p-4">
+                    <div class="mb-3">
+                        <h2 class="h4 mb-0">{{ house.title }}</h2>
+                    </div>
+                    <div class="mb-3">
+                        <ul class="list-inline  font-size-1">
+                            <li class="list-inline-item mr-4"><span class="fas fa-ruler-combined text-muted mr-1"></span>{{ house.size }}
+                            </li>
+                            <li class="list-inline-item mr-4"><span class="fas fa-warehouse text-muted mr-1"></span>
+                                {{ house.floorCount }}
+                            </li>
+                            <li class="list-inline-item mr-4"><span class="fas fa-bed text-muted mr-1"></span>
+                                {{ house.bedroomCount }}
+                            </li>
+                            <li class="list-inline-item mr-4"><span class="fas fa-bath text-muted mr-1"></span>
+                                {{ house.bathroomCount }}
+                            </li>
+                        </ul>
+                    </div>
+                    {#<div class="mb-3">#}
+                    {#<h2 class="h6 mb-0">{{ (house.price)| number_format(0,',',' ') }} р.</h2>#}
+                    {#</div>#}
+                    <a class="btn btn-sm btn-block btn-primary" href="{{ path('house_page', {'url':house.url}) }}">Подробнее</a>
+                </div>        </div>
         {% endfor %}
 
 

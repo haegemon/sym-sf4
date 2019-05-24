@@ -55,12 +55,12 @@ class PageController extends Controller
 
     public function showCustomPageTechnologyAction()
     {
-        return $this->render('ant_web_bundle\technology\index.html.twig'
+        return $this->render('ant_web_bundle\technology\base.html.twig'
         );
     }
     public function showCustomPageServicesAction()
     {
-        return $this->render('ant_web_bundle\technology\services.html.twig'
+        return $this->render('ant_web_bundle\services\base.html.twig'
         );
     }
 }

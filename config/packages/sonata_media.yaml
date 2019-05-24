@@ -1,24 +1,35 @@
 sonata_media:
+    # if you don't use default namespace configuration
+    class:
+        media: Ant\MediaBundle\Entity\Media
+        gallery: Ant\MediaBundle\Entity\Gallery
+        gallery_has_media: Ant\MediaBundle\Entity\GalleryHasMedia
     default_context: default
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
         default:
             providers:
-                - sonata.media.provider.dailymotion
-                - sonata.media.provider.youtube
                 - sonata.media.provider.image
                 - sonata.media.provider.file
-                - sonata.media.provider.vimeo
-
             formats:
-                small: { width: 100 , quality: 70}
-                big:   { width: 700 , quality: 70}
-
+                small: { width: 200 , quality: 100}
+                big:   { width: 1500 , quality: 100}
+                hero_extra: {width: 1920, quality: 90}
+                hero_square: {width: 750, height: 750, quality: 90}
+                house_thumb_small: {width: 200, quality: 90}
+                house_thumb_big: {width: 500, height: 550, quality: 90}
+                house_gallery_plan: {width: 1545, quality: 90}
+                house_gallery: {width: 700, height: 800, quality: 90}
+                services_thumb: {width: 350, height: 170, quality: 80}
+                technology_thumb: {width: 400, height: 600, quality: 80}
     cdn:
         server:
-            path: /upload/media
+            path:  '/uploads/media'
 
     filesystem:
         local:
-            # Directory for uploads should be writable
-            directory: "%kernel.project_dir%/public/upload/media"
-            create: false
+            directory:  "%kernel.root_dir%/../public/uploads/media"
+            create:     false
+    providers:
+        image:
+            thumbnail:  sonata.media.thumbnail.liip_imagine

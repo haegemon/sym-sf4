@@ -1,14 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    {% block metakeywords %}{% endblock %}
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
-<body>
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+{% extends 'front_layout.html.twig' %}
+
+{% block body %}
+                <!-- Hero Section -->
+    {{ render(url('ad_one')) }}
+
+    <!-- Houses Carousel -->
+                <div class="js-slick-carousel u-slick u-slick--gutters-3 z-index-2"
+                     data-slides-show="5"
+                     data-slides-scroll="1"
+                     data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0"
+                     data-responsive='[{
+               "breakpoint": 1200,
+               "settings": {
+                 "slidesToShow": 4
+               }
+             }, {
+               "breakpoint": 992,
+               "settings": {
+                 "slidesToShow": 3
+               }
+             }, {
+               "breakpoint": 768,
+               "settings": {
+                 "slidesToShow": 2
+               }
+             }, {
+               "breakpoint": 480,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }]'>
+                    {% for house in houses %}
+                        {% include 'ant_web_bundle/house/thumb_house.html.twig' %}
+                    {% endfor %}
+                </div>
+                <!-- End Slick Carousel -->
+            </div>
+            <!-- SVG Bottom Shape -->
+            <figure class="position-absolute right-0 bottom-0 left-0">
+                <img class="js-svg-injector" src="{{ asset('assets/svg/components/irregular-shape-1-bottom.svg') }}" alt="Image Description"
+                     data-parent="#SVGheroBottomShape">
+            </figure>
+            <!-- End SVG Bottom Shape -->
+
+        </div>
+        <!-- End Hero Section -->
+        {% include 'ant_web_bundle/head/index_benefits.html.twig' %}
+    {{ render(controller('App\\Controller\\HBDOMController::testimonialsAction' )) }}
+
+    <div class="m-8 text-center">
+    {% include 'ant_web_bundle/house/house_pricing.html.twig' %}
+    </div>
+
+{% endblock %}
