@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     {% block metakeywords %}{% endblock %}
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}HBDom. Строительство каркасных домов по канадской технологии{% endblock %}</title>
     {% block stylesheets %}
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../../favicon.ico">
-
-    <!-- Google Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/animate.css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/slick-carousel/slick/slick.css') }}">
-
-    <!-- CSS Front Template -->
-    <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../favicon.ico">
+        <!-- Google Fonts -->
+        <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+        <!-- CSS Implementing Plugins -->
+        <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/css/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/animate.css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/slick-carousel/slick/slick.css') }}">
+        <!-- CSS Front Template -->
+        <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     {% endblock %}
 </head>
 <body>
@@ -31,13 +28,23 @@
         <div class="u-header__section">
             <div id="logoAndNav" class="container">
                 <!-- Nav -->
-                <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                <nav class="js-mega-menu navbar navbar-expand-lg u-header__navbar u-header__navbar--no-space">
                     <!-- Logo -->
                     <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{ path ('dom_index') }}" aria-label="Front">
-                                              <span class="u-header__navbar-brand-text">HBDom</span>
+                        <img src="{{ asset ('assets/img/logos/logo-header.png') }}">
                     </a>
                     <!-- End Logo -->
-
+                    <div>
+                        <ul class="nav">
+                            <li>
+                                <a href="{{ path ('order_new') }}" class="ml-6 h5"><span class="fas fa-phone-square"></span> 8(800) 111-11-11</a>
+                            </li>
+                            <li>
+                                {#<img src="{{ asset('assets/img/others/leaf.png') }}" width="100">#}
+                                <a href="{{ path ('order_new') }}" class="btn btn-outline-primary btn-xs ml-6">Рассчитать</a>
+                            </li>
+                        </ul>
+                    </div>
                     <!-- Responsive Toggle Button -->
                     <button type="button" class="navbar-toggler btn u-hamburger"
                             aria-label="Toggle navigation"
@@ -50,7 +57,6 @@
             </span>
                     </button>
                     <!-- End Responsive Toggle Button -->
-
                     <!-- Navigation -->
                     <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                         {{ knp_menu_render('mainMenu') }}
@@ -64,7 +70,7 @@
     <!-- ========== END HEADER ========== -->
 {% endblock %}
 <main id="content" role="main">
-{% block body %}{% endblock %}
+    {% block body %}{% endblock %}
 </main>
 {% block footer %}
     {% include 'footer.html.twig' %}
@@ -82,39 +88,36 @@
     </a>
     <!-- End Go to Top -->{% endblock %}
 {% block javascripts_vendor %}
-<!-- JS Global Compulsory -->
-<script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
+    <!-- JS Global Compulsory -->
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
 {% endblock %}
 
-    {% block javascripts_plugins %}
-        <!-- JS Implementing Plugins -->
-<script src="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
-<script src="{{ asset('assets/vendor/svg-injector/dist/svg-injector.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/slick-carousel/slick/slick.js') }}"></script>
-<script src="{{ asset('assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+{% block javascripts_plugins %}
+    <!-- JS Implementing Plugins -->
+    <script src="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
+    <script src="{{ asset('assets/vendor/svg-injector/dist/svg-injector.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/slick-carousel/slick/slick.js') }}"></script>
+    <script src="{{ asset('assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 {% endblock %}
 
 {% block javascripts_front %}
-<!-- JS Front -->
-<script src="{{ asset('assets/js/hs.core.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.header.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.focus-state.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.validation.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.slick-carousel.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.svg-injector.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.go-to.js') }}"></script>
-<script src="{{ asset('assets/js/components/hs.sticky-block.js') }}"></script>
-
-
-<!-- JS Implementing Plugins -->
+    <!-- JS Front -->
+    <script src="{{ asset('assets/js/hs.core.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.header.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.focus-state.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.validation.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.slick-carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.svg-injector.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.go-to.js') }}"></script>
+    <script src="{{ asset('assets/js/components/hs.sticky-block.js') }}"></script>
+    <!-- JS Implementing Plugins -->
 {% endblock %}
 
 {% block javascripts_init %}
-
     <!-- JS Plugins Init. -->
     <script>
         $(window).on('load', function () {
@@ -145,15 +148,20 @@
             // initialization of slick carousel
             $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
+            // initialization of popups
+            $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
             // initialization of go to
             $.HSCore.components.HSGoTo.init('.js-go-to');
 
             var items = $.HSCore.components.HSChartPie.init('.js-pie');
 
+        $(window).on('load', function () {
+                // initialization of svg injector module
+                $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+            })
         });
     </script>
-
-
 {% endblock %}
 </body>
 </html>

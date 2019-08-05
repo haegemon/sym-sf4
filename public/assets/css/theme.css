@@ -17132,14 +17132,14 @@ button:focus {
 /* primary air */
 .btn-soft-primary {
   color: #d14130;
-  background: rgba(55, 125, 255, 0.1);
+  background: rgba(125, 147, 154, 0.2);
   border-color: transparent;
 }
 
 .btn-soft-primary[href]:hover, .btn-soft-primary[href]:focus, .btn-soft-primary[href]:active, .btn-soft-primary[href].active, .btn-soft-primary[type]:hover, .btn-soft-primary[type]:focus, .btn-soft-primary[type]:active, .btn-soft-primary[type].active {
   color: #fff;
   background: #d14130;
-  box-shadow: 0 4px 11px rgba(55, 125, 255, 0.35);
+  box-shadow: 0 4px 11px rgba(125, 147, 154, 0.35);
 }
 
 .btn-soft-primary[href].disabled, .btn-soft-primary[href]:disabled, .btn-soft-primary[type].disabled, .btn-soft-primary[type]:disabled {
@@ -20591,7 +20591,7 @@ label.btn {
 /* Flat */
 .u-slick__arrow--flat {
   color: #fff;
-  background-color: rgba(55, 125, 255, 0.8);
+  background-color: rgba(125, 147, 154, 0.2);
 }
 
 /* Flat White */
@@ -21260,7 +21260,7 @@ label.btn {
 }
 
 .gradient-half-primary-v3 {
-  background-image: linear-gradient(0deg, rgba(55, 125, 255, 0.1) 0%, transparent 100%);
+  background-image: linear-gradient(0deg, rgba(125, 147, 154, 0.2) 0%, transparent 100%);
   background-repeat: repeat-x;
 }
 

@@ -78,7 +78,7 @@ sonata_media:
             formats:
                 small: { width: 200 , quality: 100}
                 big:   { width: 1500 , quality: 100}
-                hero_extra: {width: 1920, quality: 90}
+                hero_extra: {width: 1920, quality: 100}
 #                hero_square: {height: 900, quality: 90}
                 house_thumb_small: {width: 200, quality: 90}
                 house_thumb_big: {width: 500, height: 550, quality: 90}

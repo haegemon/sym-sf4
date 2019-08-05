@@ -1,0 +1,17 @@
+<!-- Hero Section -->
+<div id="SVGHero" class="svg-preloader position-relative bg-img-hero" style="background-image: url({% path entity.getMedia, 'hero_extra' %});">
+    <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+        <div class="w-md-65 w-lg-50">
+            <h1 class="display-4 font-size-md-down-5 font-weight-bold text-white">{{ entity.title }}</h1>
+            <h2 class="display-4 font-size-md-down-5 font-weight-bold text-primary">{{ entity.text }}</h2>
+        </div>
+    </div>
+
+    <!-- SVG Background -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <img class="js-svg-injector" src="{{ asset ('assets/svg/components/wave-9-bottom.svg')}}" alt="Image Description"
+             data-parent="#SVGHero">
+    </figure>
+    <!-- End SVG Background -->
+</div>
+<!-- End Hero Section -->

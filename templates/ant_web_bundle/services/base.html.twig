@@ -1,13 +1,11 @@
 {% extends 'front_layout.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-   <link rel="stylesheet" href="{{ asset('assets/vendor/cubeportfolio/css/cubeportfolio.min.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('assets/vendor/cubeportfolio/css/cubeportfolio.min.css') }}">
 {% endblock %}
 {% block body %}
-   {#{%  include ('ant_web_bundle/ad/_ad_three.html.twig') %}#}
+    {#{%  include ('ant_web_bundle/ad/_ad_three.html.twig') %}#}
     {{ render(url('ad_two')) }}
-
     <div class="m-8 text-center">
         <h2>Построим для Вас</h2>
         <p>Выберите подходящий объект</p>
@@ -18,25 +16,21 @@
         <p>Готовые объекты</p>
     </div>
     <div class="m-8">
-    {{ render(url('services_gallery')) }}
+        {{ render(url('services_gallery')) }}
     </div>
-
 {% endblock %}
 {% block javascripts_front %}
-{{ parent () }}
-   <!-- JS Implementing Plugins -->
-   <script src="{{ asset('assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js')}}"></script>
-    <script src="{{ asset('assets/js/helpers/hs.slick-carousel.js')}}"></script>
-
-
+    {{ parent () }}
     <!-- JS Implementing Plugins -->
-   <script src="{{ asset('assets/js/components/hs.cubeportfolio.js')}}"></script>
-
-   <!-- JS Plugins Init. -->
-   <script>
-       $(document).on('ready', function () {
-           // initialization of cubeportfolio
-           $.HSCore.components.HSCubeportfolio.init('.cbp');
-       });
-   </script>
+    <script src="{{ asset('assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js')}}"></script>
+    <script src="{{ asset('assets/js/helpers/hs.slick-carousel.js')}}"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="{{ asset('assets/js/components/hs.cubeportfolio.js')}}"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // initialization of cubeportfolio
+            $.HSCore.components.HSCubeportfolio.init('.cbp');
+        });
+    </script>
 {% endblock %}

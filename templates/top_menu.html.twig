@@ -6,34 +6,24 @@
                 data-animation-in="slideInUp"
                 data-animation-out="fadeOut"
                 data-position="left">
-                <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="{{ menuItem.uri}}" aria-haspopup="true" aria-expanded="false">{{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages'))  }}</a>
-
+                <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="{{ menuItem.uri}}" aria-haspopup="true" aria-expanded="false">
+                    {{ menuItem.label |trans(menuItem.getExtra('translation_params', {}), menuItem.getExtra('translation_domain', 'messages'))  }}</a>
                 <!-- Home - Mega Menu -->
                 <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
                     <div class="row no-gutters">
-                        <div class="col-lg-6">
-                            <!-- Banner Image -->
-                            <div class="u-header__banner" style="background-image: url(../../assets/img/750x750/img1.jpg);">
-                                <div class="u-header__banner-content">
-                                    <div class="mb-4">
-                                        <span class="u-header__banner-title">Branding Works</span>
-                                        <p class="u-header__banner-text">Experience a level of our quality in both design &amp; customization works.</p>
-                                    </div>
-                                    <a class="btn btn-primary btn-sm transition-3d-hover" href="#">Learn More <span class="fas fa-angle-right ml-2"></span></a>
-                                </div>
-                            </div>
-                            <!-- End Banner Image -->
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="row u-header__mega-menu-wrapper">
-                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                        {#<div class="col-lg-6">#}
+                            {#<!-- Banner Image -->#}
+                            {#<div class="u-header__banner" style="background-image: url({{ asset ('assets/img/logos/logo-header.png') }}">#}
+                            {#</div>#}
+                            {#<!-- End Banner Image -->#}
+                        {#</div>#}
+                            <div class="row u-header__mega-menu-wrapper nav-pill">
+                                    <ul class="nav nav-pills nav-justified">
                                     {% for child in menuItem.children %}
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="{{ child.uri }}">{{ child.label }}</a></li>
+                                        <li><a class="nav-item nav-link u-header__sub-menu-nav-link" href="{{ child.uri }}">{{ child.label }}</a></li>
                                     {% endfor %}
                                     </ul>
                             </div>
-                        </div>
                     </div>
                 </div>
             </li>
@@ -45,5 +35,12 @@
             </li>
         {% endif %}
     {% endfor %}
+    {#<li>#}
+           {#<a href="{{ path ('order_new') }}" class="ml-6 h5"><span class="fas fa-phone-square"></span> 8(800) 111-11-11</a>#}
+    {#</li>#}
+    {#<li>#}
+        {#<img src="{{ asset('assets/img/others/leaf.png') }}" width="100">#}
+        {#<a href="{{ path ('order_new') }}" class="btn btn-outline-primary btn-xs ml-6">Рассчитать</a>#}
+    {#</li>#}
     <!-- End Button -->
 </ul>

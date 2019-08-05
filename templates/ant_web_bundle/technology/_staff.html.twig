@@ -1,0 +1,71 @@
+
+<!-- Team Section -->
+<div class="container">
+    <!-- Slick Carousel -->
+    <div class="js-slick-carousel u-slick u-slick--gutters-3"
+         data-slides-show="2"
+         data-slides-scroll="1"
+         data-pagi-classes="text-center u-slick__pagination mt-7 mb-0"
+         data-responsive='[{
+         "breakpoint": 992,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }, {
+         "breakpoint": 768,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }, {
+         "breakpoint": 554,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }]'>
+
+        {% for entity in staffs %}
+
+        <div class="js-slide px-3">
+            <!-- Team -->
+            <div class="row">
+                <div class="col-sm-6 d-sm-flex align-content-sm-start flex-sm-column text-center text-sm-left mb-7 mb-sm-0">
+                    <div class="w-100">
+                        <h3 class="h5 mb-4">{{ entity.fullName }}</h3>
+                    </div>
+                    <div class="d-inline-block">
+                        <span class="badge badge-primary badge-pill badge-bigger mb-3">{{ entity.position }}</span>
+                    </div>
+                    <p class="font-size-1">{{ entity.description }}</p>
+
+                    <!-- Social Networks -->
+                    <ul class="list-inline mt-auto mb-0">
+                        <li class="list-inline-item mx-0">
+                            <a class="btn btn-sm btn-icon btn-soft-secondary" href="#">
+                                <span class="fab fa-facebook-f btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mx-0">
+                            <a class="btn btn-sm btn-icon btn-soft-secondary" href="#">
+                                <span class="fab fa-google btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mx-0">
+                            <a class="btn btn-sm btn-icon btn-soft-secondary" href="#">
+                                <span class="fab fa-twitter btn-icon__inner"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- End Social Networks -->
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-fluid rounded mx-auto" src="{% path entity.getPhoto, 'staff' %}" alt="Image Description">
+                </div>
+            </div>
+            <!-- End Team -->
+        </div>
+{% endfor %}
+
+    </div>
+    <!-- End Slick Carousel -->
+</div>
+<!-- End Team Section -->

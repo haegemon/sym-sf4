@@ -40,7 +40,8 @@ class FrontendBuilder {
                     $house->getTitle(),
                     [
                         'route' => 'house_page',
-                        'routeParameters' => ['url' => $house->getUrl()]
+                        'routeParameters' => ['url' => $house->getUrl()],
+
                     ]
                 )
                 ->setExtra('translation_domain', 'AntWebBundle');
@@ -51,8 +52,7 @@ class FrontendBuilder {
         $menu
             ->addChild('top_menu.technologies', array('route' => 'ant_technology'))
             ->setExtra('translation_domain', 'AntWebBundle');
-
-        return $menu;
+             return $menu;
     }
 
     public function footerMenu(FactoryInterface $factory, array $options)

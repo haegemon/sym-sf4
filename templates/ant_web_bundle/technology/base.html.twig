@@ -11,7 +11,7 @@
 
         <!-- SVG Background -->
         <figure class="position-absolute right-0 bottom-0 left-0">
-            <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+            <img class="js-svg-injector" src="{{ asset ('assets/svg/components/wave-1-bottom-sm.svg')}}" alt="Image Description"
                  data-parent="#SVGwave1BottomSMShape">
         </figure>
         <!-- End SVG Background Section -->
@@ -23,20 +23,20 @@
     {{ render(url('technology_ad_three')) }}
     {{ render(url('technology_ad_five')) }}
     {{ render(url('technology_ad_six')) }}
+
+    <div class="m-8 text-center">
+        <h2>Команда</h2>
+        <p>Работаем для Вас</p>
+    </div>
+    <div class="m-8">
+        {{ render(controller('App\\Controller\\HBDOMController::staffAction' )) }}
+    </div>
+
     <div class="m-8 text-center">
         <h2>Почему мы?</h2>
         <p>Преимущества работы с HBDome</p>
     </div>
     {%  include ('ant_web_bundle/technology/_benefits.html.twig') %}
-    <div class="m-8 text-center">
-        <h2>Команда</h2>
-        <p>Работаем для Вас</p>
-    </div>
-<div class="m-8">
-    {%  include ('ant_web_bundle/technology/_team.html.twig') %}
-</div>
-
-
 
 {% endblock %}
 

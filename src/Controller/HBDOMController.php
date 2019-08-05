@@ -138,13 +138,13 @@ class HBDOMController extends AbstractController
         ));
     }
 
-    public function teamAction()
+    public function staffAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $staffs = $em->getRepository(Staff::class)->findAll();
 
-        return $this->render('team.html.twig', array(
+        return $this->render('ant_web_bundle/technology/_staff.html.twig', array(
             'staffs' => $staffs,
         ));
     }

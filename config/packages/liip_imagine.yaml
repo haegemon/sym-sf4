@@ -66,4 +66,12 @@ liip_imagine:
         default_technology_thumb:
             quality: 90
             filters:
+                thumbnail: {size: [350, 400]}
+        default_staff:
+            quality: 90
+            filters:
                 thumbnail: {size: [475, 500]}
+        default_testimonial:
+            quality: 90
+            filters:
+                thumbnail: {size: [100, 100]}

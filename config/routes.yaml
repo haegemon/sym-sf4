@@ -27,7 +27,7 @@ ad_two:
     defaults:
         _controller: AntWebBundle:Ad:show
         id: 21
-        adTemplate:    /ant_web_bundle/ad/_ad_three.html.twig
+        adTemplate:    /ant_web_bundle/ad/_ad_four.html.twig
 
 technology_ad_two:
     path: /technology_ad_two

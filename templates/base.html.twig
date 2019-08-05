@@ -45,11 +45,16 @@
 
         </div>
         <!-- End Hero Section -->
-        {% include 'ant_web_bundle/head/index_benefits.html.twig' %}
-    {{ render(controller('App\\Controller\\HBDOMController::testimonialsAction' )) }}
-
+           {% include 'ant_web_bundle/head/index_benefits.html.twig' %}
     <div class="m-8 text-center">
-    {% include 'ant_web_bundle/house/house_pricing.html.twig' %}
+        <h2>Команда</h2>
+        <p>Работаем для Вас</p>
     </div>
-
+    <div class="m-8">
+        {{ render(controller('App\\Controller\\HBDOMController::staffAction' )) }}
+    </div>
+    {{ render(controller('App\\Controller\\HBDOMController::testimonialsAction' )) }}
+    <div class="m-8 text-center">
+        {% include 'ant_web_bundle/house/house_pricing.html.twig' %}
+    </div>
 {% endblock %}
